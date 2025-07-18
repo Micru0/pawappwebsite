@@ -62,7 +62,7 @@ export default function PawappLanding() {
       >
         <div className="container mx-auto px-4 h-full flex items-center justify-between">
           <Link className="flex items-center" href="#">
-            <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-10 w-auto" />
+            <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-12 w-auto" />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
@@ -129,11 +129,12 @@ export default function PawappLanding() {
           {/* Decorative Paw Prints */}
 
           {/* Hero Image with Diagonal Mask */}
-          <div className="absolute right-0 top-0 w-[45%] h-full">
+          <div className="absolute right-0 top-0 w-[50%] h-full">
             <div
               className="w-full h-full relative"
               style={{
                 clipPath: "polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                maskImage: "linear-gradient(to left, black 70%, transparent 100%)",
               }}
             >
               <Carousel
@@ -182,10 +183,10 @@ export default function PawappLanding() {
           <div className="relative z-10 container mx-auto px-4">
             <div className="w-full lg:w-[50%] lg:pr-8 animate-fade-in">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-tight">
-                Happy Pets, Happier You.
+                PawApp | Kuwait’s Trusted Pet Care Companion.
               </h1>
               <h4 className="text-lg sm:text-xl lg:text-2xl text-white/70 mb-8 leading-relaxed max-w-2xl">
-                Book vets, grooming, walking & more across Kuwait — all in one tap.
+                Book vets, groomers, and more—all from your phone.
               </h4>
 
               <div className="flex flex-col sm:flex-row gap-5 sm:gap-5">
@@ -208,8 +209,15 @@ export default function PawappLanding() {
         </section>
 
         {/* App Preview & Download */}
-        <section className="py-16 bg-navy-900">
-          <div className="container mx-auto px-4">
+        <section className="relative py-16 bg-navy-900 overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <img
+              src="/images/paw-app-logo.png"
+              alt="Pawapp Logo Watermark"
+              className="w-1/2 h-auto object-contain opacity-5 rotate-12"
+            />
+          </div>
+          <div className="relative container mx-auto px-4">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-paw-yellow">
@@ -242,8 +250,15 @@ export default function PawappLanding() {
         </section>
 
         {/* Comprehensive Services */}
-        <section id="services" className="py-16 bg-navy-900">
-          <div className="container mx-auto px-4">
+        <section id="services" className="relative py-16 bg-navy-900 overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <img
+              src="/images/paw-app-logo.png"
+              alt="Pawapp Logo Watermark"
+              className="w-1/2 h-auto object-contain opacity-5 rotate-12"
+            />
+          </div>
+          <div className="relative container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-paw-yellow">PawApp Pet Services</h2>
               <p className="text-lg text-white/80 max-w-3xl mx-auto">
@@ -256,8 +271,8 @@ export default function PawappLanding() {
               {/* Pet Health & Emergency */}
               <Card className="bg-white/10 border border-paw-yellow/30 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-250">
                 <CardContent className="p-6">
-                  <div className="bg-red-500 p-3 rounded-full w-12 h-12 mb-4 flex items-center justify-center">
-                    <Stethoscope className="h-6 w-6 text-white" />
+                  <div className="bg-navy-700 p-3 rounded-full w-12 h-12 mb-4 flex items-center justify-center">
+                    <Stethoscope className="h-6 w-6 text-paw-yellow" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-paw-yellow">Pet Health & Emergency</h3>
                   <ul className="space-y-2 text-gray-300 mb-4">
@@ -272,8 +287,8 @@ export default function PawappLanding() {
               {/* Lifestyle Care */}
               <Card className="bg-white/10 border border-paw-yellow/30 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-250">
                 <CardContent className="p-6">
-                  <div className="bg-paw-yellow p-3 rounded-full w-12 h-12 mb-4 flex items-center justify-center">
-                    <Scissors className="h-6 w-6 text-navy-900" />
+                  <div className="bg-navy-700 p-3 rounded-full w-12 h-12 mb-4 flex items-center justify-center">
+                    <Scissors className="h-6 w-6 text-paw-yellow" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-paw-yellow">Lifestyle Care</h3>
                   <ul className="space-y-2 text-gray-300 mb-4">
@@ -289,7 +304,7 @@ export default function PawappLanding() {
               <Card className="bg-white/10 border border-paw-yellow/30 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-250">
                 <CardContent className="p-6">
                   <div className="bg-navy-700 p-3 rounded-full w-12 h-12 mb-4 flex items-center justify-center">
-                    <Dog className="h-6 w-6 text-white" />
+                    <Dog className="h-6 w-6 text-paw-yellow" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-paw-yellow">Training & Behaviour</h3>
                   <ul className="space-y-2 text-gray-300 mb-4">
@@ -304,8 +319,8 @@ export default function PawappLanding() {
               {/* Transport & Logistics */}
               <Card className="bg-white/10 border border-paw-yellow/30 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-250">
                 <CardContent className="p-6">
-                  <div className="bg-green-500 p-3 rounded-full w-12 h-12 mb-4 flex items-center justify-center">
-                    <MessageCircle className="h-6 w-6 text-white" />
+                  <div className="bg-navy-700 p-3 rounded-full w-12 h-12 mb-4 flex items-center justify-center">
+                    <MessageCircle className="h-6 w-6 text-paw-yellow" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-paw-yellow">Transport & Logistics</h3>
                   <ul className="space-y-2 text-gray-300 mb-4">
@@ -320,8 +335,8 @@ export default function PawappLanding() {
               {/* Commerce */}
               <Card className="bg-white/10 border border-paw-yellow/30 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-250">
                 <CardContent className="p-6">
-                  <div className="bg-purple-500 p-3 rounded-full w-12 h-12 mb-4 flex items-center justify-center">
-                    <ShoppingBag className="h-6 w-6 text-white" />
+                  <div className="bg-navy-700 p-3 rounded-full w-12 h-12 mb-4 flex items-center justify-center">
+                    <ShoppingBag className="h-6 w-6 text-paw-yellow" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-paw-yellow">Commerce</h3>
                   <ul className="space-y-2 text-gray-300 mb-4">
@@ -335,8 +350,8 @@ export default function PawappLanding() {
               {/* Community & Safety */}
               <Card className="bg-white/10 border border-paw-yellow/30 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-250">
                 <CardContent className="p-6">
-                  <div className="bg-orange-500 p-3 rounded-full w-12 h-12 mb-4 flex items-center justify-center">
-                    <Star className="h-6 w-6 text-white" />
+                  <div className="bg-navy-700 p-3 rounded-full w-12 h-12 mb-4 flex items-center justify-center">
+                    <Star className="h-6 w-6 text-paw-yellow" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-paw-yellow">Community & Safety</h3>
                   <ul className="space-y-2 text-gray-300 mb-4">
@@ -351,8 +366,15 @@ export default function PawappLanding() {
         </section>
 
         {/* Key Features */}
-        <section id="features" className="py-16 bg-navy-900">
-          <div className="container mx-auto px-4">
+        <section id="features" className="relative py-16 bg-navy-900 overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <img
+              src="/images/paw-app-logo.png"
+              alt="Pawapp Logo Watermark"
+              className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
+            />
+          </div>
+          <div className="relative container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-paw-yellow">Features</h2>
               <p className="text-lg text-white/80 max-w-3xl mx-auto">
@@ -364,7 +386,7 @@ export default function PawappLanding() {
               <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
                 <div className="flex items-start space-x-3">
                   <div className="bg-navy-700 p-2 rounded-lg">
-                    <Stethoscope className="h-5 w-5 text-white" />
+                    <Stethoscope className="h-5 w-5 text-paw-yellow" />
                   </div>
                   <div>
                     <h3 className="font-bold text-paw-yellow mb-1">Unified Pet Profile</h3>
@@ -375,8 +397,8 @@ export default function PawappLanding() {
 
               <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
                 <div className="flex items-start space-x-3">
-                  <div className="bg-red-500 p-2 rounded-lg">
-                    <MessageCircle className="h-5 w-5 text-white" />
+                  <div className="bg-navy-700 p-2 rounded-lg">
+                    <MessageCircle className="h-5 w-5 text-paw-yellow" />
                   </div>
                   <div>
                     <h3 className="font-bold text-paw-yellow mb-1">Instant Vet Triage 24/7</h3>
@@ -387,8 +409,8 @@ export default function PawappLanding() {
 
               <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
                 <div className="flex items-start space-x-3">
-                  <div className="bg-paw-yellow p-2 rounded-lg">
-                    <Calendar className="h-5 w-5 text-navy-900" />
+                  <div className="bg-navy-700 p-2 rounded-lg">
+                    <Calendar className="h-5 w-5 text-paw-yellow" />
                   </div>
                   <div>
                     <h3 className="font-bold text-paw-yellow mb-1">Real-time Slot Booking</h3>
@@ -400,7 +422,7 @@ export default function PawappLanding() {
               <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
                 <div className="flex items-start space-x-3">
                   <div className="bg-navy-700 p-2 rounded-lg">
-                    <Globe className="h-5 w-5 text-white" />
+                    <Globe className="h-5 w-5 text-paw-yellow" />
                   </div>
                   <div>
                     <h3 className="font-bold text-paw-yellow mb-1">Multi-language UI</h3>
@@ -411,8 +433,8 @@ export default function PawappLanding() {
 
               <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
                 <div className="flex items-start space-x-3">
-                  <div className="bg-green-500 p-2 rounded-lg">
-                    <MapPin className="h-5 w-5 text-white" />
+                  <div className="bg-navy-700 p-2 rounded-lg">
+                    <MapPin className="h-5 w-5 text-paw-yellow" />
                   </div>
                   <div>
                     <h3 className="font-bold text-paw-yellow mb-1">Geo-based Clinic Finder</h3>
@@ -423,8 +445,8 @@ export default function PawappLanding() {
 
               <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
                 <div className="flex items-start space-x-3">
-                  <div className="bg-blue-500 p-2 rounded-lg">
-                    <MessageCircle className="h-5 w-5 text-white" />
+                  <div className="bg-navy-700 p-2 rounded-lg">
+                    <MessageCircle className="h-5 w-5 text-paw-yellow" />
                   </div>
                   <div>
                     <h3 className="font-bold text-paw-yellow mb-1">Push & WhatsApp Alerts</h3>
@@ -435,8 +457,8 @@ export default function PawappLanding() {
 
               <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
                 <div className="flex items-start space-x-3">
-                  <div className="bg-purple-500 p-2 rounded-lg">
-                    <ShoppingBag className="h-5 w-5 text-white" />
+                  <div className="bg-navy-700 p-2 rounded-lg">
+                    <ShoppingBag className="h-5 w-5 text-paw-yellow" />
                   </div>
                   <div>
                     <h3 className="font-bold text-paw-yellow mb-1">Cash / K-Net / Apple Pay</h3>
@@ -447,8 +469,8 @@ export default function PawappLanding() {
 
               <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
                 <div className="flex items-start space-x-3">
-                  <div className="bg-orange-500 p-2 rounded-lg">
-                    <Star className="h-5 w-5 text-white" />
+                  <div className="bg-navy-700 p-2 rounded-lg">
+                    <Star className="h-5 w-5 text-paw-yellow" />
                   </div>
                   <div>
                     <h3 className="font-bold text-paw-yellow mb-1">Lost-&-Found Quick Post</h3>
@@ -459,8 +481,8 @@ export default function PawappLanding() {
 
               <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
                 <div className="flex items-start space-x-3">
-                  <div className="bg-paw-yellow p-2 rounded-lg">
-                    <Download className="h-5 w-5 text-navy-900" />
+                  <div className="bg-navy-700 p-2 rounded-lg">
+                    <Download className="h-5 w-5 text-paw-yellow" />
                   </div>
                   <div>
                     <h3 className="font-bold text-paw-yellow mb-1">Product Marketplace</h3>
@@ -473,8 +495,15 @@ export default function PawappLanding() {
         </section>
 
         {/* Trusted Partner Clinics */}
-        <section id="clinics" className="py-16 bg-navy-900">
-          <div className="container mx-auto px-4">
+        <section id="clinics" className="relative py-16 bg-navy-900 overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <img
+              src="/images/paw-app-logo.png"
+              alt="Pawapp Logo Watermark"
+              className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
+            />
+          </div>
+          <div className="relative container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-paw-yellow">Trusted Partner Clinics</h2>
               <p className="text-lg text-white/80 max-w-2xl mx-auto">
@@ -597,8 +626,15 @@ export default function PawappLanding() {
         </section>
 
         {/* Blog Preview */}
-        <section id="blog" className="py-16 bg-navy-900">
-          <div className="container mx-auto px-4">
+        <section id="blog" className="relative py-16 bg-navy-900 overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <img
+              src="/images/paw-app-logo.png"
+              alt="Pawapp Logo Watermark"
+              className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
+            />
+          </div>
+          <div className="relative container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-paw-yellow">Latest from Our Blog</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <Card className="bg-white/10 border border-paw-yellow/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-250">
@@ -645,8 +681,15 @@ export default function PawappLanding() {
         </section>
 
         {/* Download CTA */}
-        <section className="py-16 bg-navy-900">
-          <div className="container mx-auto px-4 text-center">
+        <section className="relative py-16 bg-navy-900 overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <img
+              src="/images/paw-app-logo.png"
+              alt="Pawapp Logo Watermark"
+              className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
+            />
+          </div>
+          <div className="relative container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-paw-yellow">Download Pawapp Today</h2>
             <p className="text-xl text-white opacity-80 mb-8 max-w-2xl mx-auto">
               Join thousands of pet owners across Kuwait who trust Pawapp for their pet care needs.
