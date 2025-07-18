@@ -171,8 +171,7 @@ export default function PawappLanding() {
                 <Button
                   asChild
                   size="lg"
-                  variant="outline"
-                  className="border-paw-yellow text-paw-yellow hover:bg-paw-yellow/10 hover:text-paw-yellow font-semibold px-6 py-3 text-base sm:text-lg w-full sm:w-auto"
+                  className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-8 py-4 text-lg transition-all duration-150 hover:shadow-lg"
                 >
                   <Link href="#services">Explore Services</Link>
                 </Button>
@@ -218,7 +217,7 @@ export default function PawappLanding() {
         </section>
 
         {/* App Preview & Download */}
-        <section className="relative py-20 bg-navy-800 overflow-hidden">
+        <section className="relative py-20 bg-navy-900 overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center">
             <img
               src="/images/paw-app-logo.png"
