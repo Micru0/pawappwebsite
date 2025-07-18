@@ -1,0 +1,43 @@
+# PawApp Landing Page Development Log
+
+## Project Overview
+This is a Next.js project for the PawApp landing page, initially created with v0.dev. The website is a single-page application that showcases the features of PawApp.
+
+## Getting Started
+1.  **Install Dependencies:** Run `pnpm install` in the root directory.
+2.  **Run Development Server:** Run `pnpm run dev`. The application will be available at `http://localhost:3000` (or the next available port).
+
+## File Structure
+-   `app/page.tsx`: The main and only page of the website. Contains the `PawappLanding` component.
+-   `public/`: Contains static assets like images.
+    -   `public/images/`: Contains all the images used on the website, including the hero carousel images and logos.
+-   `components/ui/`: Contains UI components from `shadcn/ui`.
+-   `package.json`: Lists project dependencies and scripts.
+-   `tailwind.config.ts`: Configuration for Tailwind CSS.
+-   `app/globals.css`: Global styles.
+
+## Key Components & Functionality
+-   **`PawappLanding` Component (`app/page.tsx`)**: This is the main component that renders the entire landing page.
+-   **Hero Section Carousel**:
+    -   Located at the top of the `PawappLanding` component.
+    -   Implemented using `embla-carousel-react` and `embla-carousel-autoplay`.
+    -   The images for the carousel are located in `public/images` and are configured inside the `Carousel` component in `app/page.tsx`.
+    -   The autoplay speed is configured in `app/page.tsx` within the `Autoplay` plugin options. The current delay is 4000ms (4 seconds).
+-   **Clinic Cards**:
+    -   The "Trusted Partner Clinics" section displays cards for different vet clinics.
+    -   The images for these cards were initially missing and have been replaced with `/placeholder.svg`.
+-   **Testimonials Section**:
+    -   This section cycles through testimonials automatically.
+    -   The content for the testimonials is hardcoded in an array within the `PawappLanding` component in `app/page.tsx`.
+
+## Styling
+-   The project uses **Tailwind CSS** for styling.
+-   Custom colors like `paw-yellow`, `navy-900`, etc., are defined in `tailwind.config.ts`.
+-   Global styles are located in `app/globals.css`.
+
+## Dependencies
+-   **Framework**: Next.js
+-   **Package Manager**: pnpm
+-   **UI Components**: shadcn/ui
+-   **Carousel**: embla-carousel-react, embla-carousel-autoplay
+-   **Styling**: Tailwind CSS 
