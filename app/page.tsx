@@ -124,47 +124,84 @@ export default function PawappLanding() {
       </header>
 
       <main>
-        {/* Enhanced Hero Section */}
-        <section className="relative w-full min-h-screen flex items-center bg-gradient-to-br from-navy-900 via-navy-900 to-navy-700 overflow-hidden">
-          {/* Decorative Paw Prints */}
+        {/* Responsive Hero Section */}
+        <section className="relative w-full lg:h-screen flex flex-col lg:flex-row bg-gradient-to-br from-navy-900 via-navy-900 to-navy-700 overflow-hidden">
+          {/* Mobile Image (Full-width) */}
+          <div className="lg:hidden w-full h-80 sm:h-96 relative">
+            <Carousel plugins={[plugin.current]} className="w-full h-full" opts={{ loop: true }}>
+              <CarouselContent>
+                <CarouselItem>
+                  <img
+                    src="/images/pawapp-background.png"
+                    alt="Happy dog and cat illustration"
+                    className="w-full h-full object-cover"
+                  />
+                </CarouselItem>
+                <CarouselItem>
+                  <img src="/images/pawappdog.png" alt="Pawapp Dog" className="w-full h-full object-cover" />
+                </CarouselItem>
+                <CarouselItem>
+                  <img src="/images/pawappcat.png" alt="Pawapp Cat" className="w-full h-full object-cover" />
+                </CarouselItem>
+              </CarouselContent>
+            </Carousel>
+            <div className="absolute inset-0 bg-navy-900/40" />
+          </div>
 
-          {/* Hero Image with Diagonal Mask */}
-          <div className="absolute right-0 top-0 w-[50%] h-full">
+          {/* Hero Content (Centered with more padding on mobile) */}
+          <div className="relative z-10 container mx-auto flex-1 flex items-center justify-center lg:justify-start">
+            <div className="w-full px-4 py-16 lg:py-0 text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+                PawApp | Kuwait’s Trusted Pet Care Companion.
+              </h1>
+              <h4 className="text-lg sm:text-xl text-white/70 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Book vets, groomers, and more—all from your phone.
+              </h4>
+              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-6 py-3 text-base sm:text-lg w-full sm:w-auto"
+                >
+                  <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone">
+                    <Download className="mr-2 h-5 w-5" />
+                    Download Pawapp
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-paw-yellow text-paw-yellow hover:bg-paw-yellow/10 hover:text-paw-yellow font-semibold px-6 py-3 text-base sm:text-lg w-full sm:w-auto"
+                >
+                  <Link href="#services">Explore Services</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Image (to the right) */}
+          <div className="hidden lg:block lg:w-1/2 h-full relative">
             <div
-              className="w-full h-full relative"
+              className="w-full h-full absolute inset-0"
               style={{
-                clipPath: "polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                maskImage: "linear-gradient(to left, black 70%, transparent 100%)",
+                clipPath: "polygon(20% 0, 100% 0%, 100% 100%, 0% 100%)",
               }}
             >
-              <Carousel
-                plugins={[plugin.current]}
-                className="w-full h-full"
-                opts={{ loop: true }}
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
-              >
+              <Carousel plugins={[plugin.current]} className="w-full h-full" opts={{ loop: true }}>
                 <CarouselContent>
                   <CarouselItem>
                     <img
                       src="/images/pawapp-background.png"
-                      alt="Happy dog and cat illustration for Pawapp"
+                      alt="Happy dog and cat illustration"
                       className="w-full h-full object-cover"
                     />
                   </CarouselItem>
                   <CarouselItem>
-                    <img
-                      src="/images/pawappdog.png"
-                      alt="Pawapp Dog"
-                      className="w-full h-full object-cover"
-                    />
+                    <img src="/images/pawappdog.png" alt="Pawapp Dog" className="w-full h-full object-cover" />
                   </CarouselItem>
                   <CarouselItem>
-                    <img
-                      src="/images/pawappcat.png"
-                      alt="Pawapp Cat"
-                      className="w-full h-full object-cover"
-                    />
+                    <img src="/images/pawappcat.png" alt="Pawapp Cat" className="w-full h-full object-cover" />
                   </CarouselItem>
                   <CarouselItem>
                     <img
@@ -175,41 +212,13 @@ export default function PawappLanding() {
                   </CarouselItem>
                 </CarouselContent>
               </Carousel>
-              <div className="absolute inset-0 bg-navy-900/30"></div>
-            </div>
-          </div>
-
-          {/* Hero Content */}
-          <div className="relative z-10 container mx-auto px-4">
-            <div className="w-full lg:w-[50%] lg:pr-8 animate-fade-in">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-tight">
-                PawApp | Kuwait’s Trusted Pet Care Companion.
-              </h1>
-              <h4 className="text-lg sm:text-xl lg:text-2xl text-white/70 mb-8 leading-relaxed max-w-2xl">
-                Book vets, groomers, and more—all from your phone.
-              </h4>
-
-              <div className="flex flex-col sm:flex-row gap-5 sm:gap-5">
-                <Button
-                  size="lg"
-                  className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-8 py-4 text-lg transition-all duration-150 hover:shadow-lg"
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Pawapp
-                </Button>
-                <Button
-                  size="lg"
-                  className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-8 py-4 text-lg transition-all duration-150 hover:shadow-lg"
-                >
-                  Explore Services
-                </Button>
-              </div>
+              <div className="absolute inset-0 bg-navy-900/30" />
             </div>
           </div>
         </section>
 
         {/* App Preview & Download */}
-        <section className="relative py-16 bg-navy-900 overflow-hidden">
+        <section className="relative py-20 bg-navy-800 overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center">
             <img
               src="/images/paw-app-logo.png"
