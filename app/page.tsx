@@ -44,6 +44,7 @@ export default function PawappLanding() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [emblaApi, setEmblaApi] = useState<CarouselApi | null>(null)
 
   const mobilePlugin = useRef(
     Autoplay({
@@ -60,6 +61,14 @@ export default function PawappLanding() {
       desktopPlugin.current.stop()
     }
   }, [])
+
+  useEffect(() => {
+    if (emblaApi) {
+      setTimeout(() => {
+        emblaApi.reInit()
+      }, 200) // Re-initialize after a short delay
+    }
+  }, [emblaApi])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -155,13 +164,14 @@ export default function PawappLanding() {
               className="w-full h-full"
               opts={{ loop: true }}
               setApi={(api: CarouselApi) => {
+                setEmblaApi(api)
                 if (api) {
                   api.on("select", () => setActiveIndex(api.selectedScrollSnap()))
                 }
               }}
             >
               <CarouselContent>
-                <CarouselItem className="flex-shrink-0">
+                <CarouselItem>
                   <Image
                     src="/images/pawapp-background.png"
                     alt="Happy dog and cat illustration"
@@ -171,7 +181,7 @@ export default function PawappLanding() {
                     priority
                   />
                 </CarouselItem>
-                <CarouselItem className="flex-shrink-0">
+                <CarouselItem>
                   <Image
                     src="/images/pawappdog.png"
                     alt="Pawapp Dog"
@@ -181,7 +191,7 @@ export default function PawappLanding() {
                     loading="lazy"
                   />
                 </CarouselItem>
-                <CarouselItem className="flex-shrink-0">
+                <CarouselItem>
                   <Image
                     src="/images/pawappcat.png"
                     alt="Pawapp Cat"
