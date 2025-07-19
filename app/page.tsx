@@ -154,7 +154,7 @@ export default function PawappLanding() {
         {/* Responsive Hero Section */}
         <section className="relative w-full lg:h-screen flex flex-col lg:flex-row bg-navy-900 overflow-hidden pt-[env(safe-area-inset-top)]">
           {/* Mobile Image Carousel */}
-          <div className="lg:hidden w-full aspect-[9/10] max-h-[70vh] relative">
+          <div className="lg:hidden w-full aspect-[9/11] max-h-[70vh] relative">
             {hasMounted ? (
               <Carousel
                 plugins={[mobilePlugin.current]}
@@ -209,62 +209,34 @@ export default function PawappLanding() {
           </div>
 
           {/* Hero Content */}
-          <div className="relative z-10 container mx-auto flex-1 flex flex-col items-center justify-center lg:justify-start px-4 sm:px-6">
+          <div className="relative z-10 container mx-auto flex-1 flex flex-col items-center justify-center lg:justify-start px-4 sm:px-6 -mt-16 lg:mt-0">
             <div className="w-full py-12 md:py-16 lg:py-0 text-center lg:text-left">
               <h1
-                className="font-extrabold text-white leading-tight mb-4"
-                style={{ fontSize: "clamp(2rem, 6vw, 2.75rem)" }}
+                className="font-extrabold text-white leading-tight mb-6"
+                style={{ fontSize: "clamp(3.5rem, 10vw, 6rem)" }}
               >
-                PawApp: Kuwait’s Trusted Pet Care Companion.
+                PawApp
               </h1>
-              <p
-                className="text-white/80 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0"
-                style={{ fontSize: "clamp(1rem, 3.5vw, 1.25rem)" }}
-              >
-                Book vets, groomers, and more—all from your phone.
-              </p>
-              <div className="hidden sm:flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-6 py-3 text-base sm:text-lg w-full sm:w-auto shadow-[0_4px_12px_rgba(255,223,102,0.35)]"
-                >
-                  <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone">
-                    <Download className="mr-2 h-5 w-5" />
-                    Download Pawapp
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-8 py-4 text-lg transition-all duration-150 hover:shadow-lg"
-                >
-                  <Link href="#services">Explore Services</Link>
-                </Button>
+              <div className="flex items-center gap-4 justify-center lg:justify-start">
+                <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="bg-white/10 border-white/20 text-white hover:bg-white/20 w-16 h-16 rounded-full transition-all duration-300"
+                  >
+                    <Apple className="h-8 w-8" />
+                  </Button>
+                </Link>
+                <Link href="https://play.google.com/store/apps/details?id=com.paw.app" passHref>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="bg-white/10 border-white/20 text-white hover:bg-white/20 w-16 h-16 rounded-full transition-all duration-300"
+                  >
+                    <Globe className="h-8 w-8" />
+                  </Button>
+                </Link>
               </div>
-            </div>
-            {/* Mobile Download Buttons */}
-            <div className="sm:hidden w-full px-4 pb-8 flex flex-col gap-4">
-              <Button
-                asChild
-                size="lg"
-                className="w-full bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold"
-              >
-                <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone">
-                  <Apple className="mr-3 h-6 w-6" />
-                  Download on App Store
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                className="w-full bg-white/90 hover:bg-white text-navy-900 font-semibold"
-              >
-                <Link href="https://play.google.com/store/apps/details?id=com.paw.app">
-                  <Globe className="mr-3 h-6 w-6" />
-                  Get it on Google Play
-                </Link>
-              </Button>
             </div>
           </div>
 
