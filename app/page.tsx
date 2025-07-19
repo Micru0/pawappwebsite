@@ -184,7 +184,7 @@ export default function PawappLanding() {
                       className="w-full h-full object-cover object-[50%_20%]"
                       width={800}
                       height={1200}
-                      loading="lazy"
+                      priority
                     />
                   </CarouselItem>
                   <CarouselItem>
@@ -194,7 +194,7 @@ export default function PawappLanding() {
                       className="w-full h-full object-cover object-[50%_20%]"
                       width={800}
                       height={1200}
-                      loading="lazy"
+                      priority
                     />
                   </CarouselItem>
                 </CarouselContent>
@@ -249,8 +249,7 @@ export default function PawappLanding() {
             <div
               className="w-full h-full absolute inset-0"
               style={{
-                clipPath: "polygon(20% 0, 100% 0%, 100% 100%, 0% 100%)",
-                maskImage: "radial-gradient(circle at 70% 50%, black 50%, transparent 90%)",
+                maskImage: "linear-gradient(100deg, transparent 15%, black 50%)",
               }}
             >
               <Carousel plugins={[desktopPlugin.current]} className="w-full h-full" opts={{ loop: true }}>
@@ -272,7 +271,7 @@ export default function PawappLanding() {
                       className="w-full h-full object-cover"
                       width={1200}
                       height={1200}
-                      loading="lazy"
+                      priority
                     />
                   </CarouselItem>
                   <CarouselItem>
@@ -282,7 +281,7 @@ export default function PawappLanding() {
                       className="w-full h-full object-cover"
                       width={1200}
                       height={1200}
-                      loading="lazy"
+                      priority
                     />
                   </CarouselItem>
                   <CarouselItem>
@@ -292,7 +291,7 @@ export default function PawappLanding() {
                       className="w-full h-full object-cover"
                       width={1200}
                       height={1200}
-                      loading="lazy"
+                      priority
                     />
                   </CarouselItem>
                 </CarouselContent>
