@@ -44,7 +44,7 @@ export default function PawappLanding() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [emblaApi, setEmblaApi] = useState<CarouselApi | null>(null)
+  const [hasMounted, setHasMounted] = useState(false)
 
   const mobilePlugin = useRef(
     Autoplay({
@@ -63,12 +63,8 @@ export default function PawappLanding() {
   }, [])
 
   useEffect(() => {
-    if (emblaApi) {
-      setTimeout(() => {
-        emblaApi.reInit()
-      }, 200) // Re-initialize after a short delay
-    }
-  }, [emblaApi])
+    setHasMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -159,50 +155,55 @@ export default function PawappLanding() {
         <section className="relative w-full lg:h-screen flex flex-col lg:flex-row bg-navy-900 overflow-hidden pt-[env(safe-area-inset-top)]">
           {/* Mobile Image Carousel */}
           <div className="lg:hidden w-full h-[65vh] max-h-[70vh] relative">
-            <Carousel
-              plugins={[mobilePlugin.current]}
-              className="w-full h-full"
-              opts={{ loop: true }}
-              setApi={(api: CarouselApi) => {
-                setEmblaApi(api)
-                if (api) {
-                  api.on("select", () => setActiveIndex(api.selectedScrollSnap()))
-                }
-              }}
-            >
-              <CarouselContent>
-                <CarouselItem>
-                  <Image
-                    src="/images/pawapp-background.png"
-                    alt="Happy dog and cat illustration"
-                    className="w-full h-full object-cover object-[50%_20%]"
-                    width={800}
-                    height={1200}
-                    priority
-                  />
-                </CarouselItem>
-                <CarouselItem>
-                  <Image
-                    src="/images/pawappdog.png"
-                    alt="Pawapp Dog"
-                    className="w-full h-full object-cover object-[50%_20%]"
-                    width={800}
-                    height={1200}
-                    loading="lazy"
-                  />
-                </CarouselItem>
-                <CarouselItem>
-                  <Image
-                    src="/images/pawappcat.png"
-                    alt="Pawapp Cat"
-                    className="w-full h-full object-cover object-[50%_20%]"
-                    width={800}
-                    height={1200}
-                    loading="lazy"
-                  />
-                </CarouselItem>
-              </CarouselContent>
-            </Carousel>
+            {hasMounted ? (
+              <Carousel
+                plugins={[mobilePlugin.current]}
+                className="w-full h-full"
+                opts={{ loop: true }}
+                setApi={(api: CarouselApi) => {
+                  if (api) {
+                    api.on("select", () => setActiveIndex(api.selectedScrollSnap()))
+                  }
+                }}
+              >
+                <CarouselContent>
+                  <CarouselItem>
+                    <Image
+                      src="/images/pawapp-background.png"
+                      alt="Happy dog and cat illustration"
+                      className="w-full h-full object-cover object-[50%_20%]"
+                      width={800}
+                      height={1200}
+                      priority
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/images/pawappdog.png"
+                      alt="Pawapp Dog"
+                      className="w-full h-full object-cover object-[50%_20%]"
+                      width={800}
+                      height={1200}
+                      loading="lazy"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <Image
+                      src="/images/pawappcat.png"
+                      alt="Pawapp Cat"
+                      className="w-full h-full object-cover object-[50%_20%]"
+                      width={800}
+                      height={1200}
+                      loading="lazy"
+                    />
+                  </CarouselItem>
+                </CarouselContent>
+              </Carousel>
+            ) : (
+              <div className="w-full h-full bg-navy-900 flex items-center justify-center">
+                {/* Optional: Add a loading spinner here */}
+              </div>
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-navy-900/50 to-navy-900/10 pointer-events-none"></div>
             <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0b1f3a] to-transparent pointer-events-none"></div>
           </div>
