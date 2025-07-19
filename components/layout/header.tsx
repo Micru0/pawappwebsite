@@ -77,46 +77,44 @@ export function Header() {
       </header>
 
       {/* Mobile Menu Overlay */}
-      <div
-        className={`fixed inset-0 z-50 bg-navy-900/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
-          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-      >
-        <div className="container mx-auto px-4 h-full flex flex-col">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" onClick={() => setIsMenuOpen(false)}>
-              <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-14 w-auto" />
-            </Link>
-            <Button variant="ghost" size="icon" className="text-white" onClick={() => setIsMenuOpen(false)}>
-              <X className="h-7 w-7" />
-            </Button>
-          </div>
-          <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-2xl font-bold text-white hover:text-paw-yellow transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-navy-900/95 backdrop-blur-xl transition-opacity duration-300 md:hidden animate-in fade-in-0">
+          <div className="container mx-auto px-4 h-full flex flex-col">
+            <div className="flex justify-between items-center h-20">
+              <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-14 w-auto" />
+              </Link>
+              <Button variant="ghost" size="icon" className="text-white" onClick={() => setIsMenuOpen(false)}>
+                <X className="h-7 w-7" />
+              </Button>
+            </div>
+            <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-2xl font-bold text-white hover:text-paw-yellow transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="pb-12 text-center">
+              <Button
+                asChild
+                size="lg"
+                className="w-full bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-bold"
               >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="pb-12 text-center">
-            <Button
-              asChild
-              size="lg"
-              className="w-full bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-bold"
-            >
-              <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone">
-                <Download className="mr-2 h-5 w-5" />
-                Download Pawapp
-              </Link>
-            </Button>
+                <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Pawapp
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   )
 } 

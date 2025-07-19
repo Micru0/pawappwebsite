@@ -146,7 +146,6 @@ export default function PawappLanding() {
                 </CarouselItem>
               </CarouselContent>
             </Carousel>
-            <div className="absolute inset-0 bg-navy-900/40" />
           </div>
 
           {/* Hero Content (Centered with more padding on mobile) */}
@@ -212,7 +211,6 @@ export default function PawappLanding() {
                   </CarouselItem>
                 </CarouselContent>
               </Carousel>
-              <div className="absolute inset-0 bg-navy-900/30" />
             </div>
           </div>
         </section>
