@@ -49,8 +49,18 @@ This is a Next.js project for the PawApp landing page, initially created with v0
     -   This section has been removed.
 -   **Logo Watermarks**:
     -   Added large, faded, and rotated logo watermarks to the background of several sections for a creative and branded look.
--   **Iconography**:
-    -   Updated all icons in the "Services" and "Features" sections to use a consistent blue and yellow color scheme.
+-   **Responsive Hero Carousel**:
+    -   Capped the slide height on mobile to `max-h-[70vh]` to prevent the illustration from dominating the screen.
+    -   Added safe-area padding (`pt-[env(safe-area-inset-top)]`) and horizontal padding (`px-4 sm:px-6`) to the hero container to avoid content hugging the edges or notch.
+    -   Elevated the navbar to a fixed layer with `z-20` and applied a subtle backdrop blur, so the menu icon sits clearly above the carousel.
+    -   Implemented fluid typography for the headline (`h1`) and subtitle (`p.subtitle`) using CSS `clamp()` for better readability across different screen sizes.
+    -   Adjusted text alignment to be centered on small screens and left-aligned from the `md` breakpoint and up.
+    -   Applied `object-fit: cover` and `object-position: 50% 20%` to the carousel images to keep key visual elements in frame.
+    -   Optimized image loading by flagging the first slide with `priority` and lazy-loading the rest.
+    -   Created a "fade-into-navy" effect with a `linear-gradient` overlay that blends the top of the carousel into the navbar.
+    -   Added tiny yellow dot indicators below the hero section on mobile (`lg:hidden`) to provide visual feedback for the carousel.
+    -   Implemented support for the `prefers-reduced-motion` media query, which disables auto-sliding while still allowing swipe gestures.
+    -   Adjusted the primary CTA button to be anchored below the subtitle on small viewports and added a subtle shadow for better depth.
 
 ## Styling
 -   The project uses **Tailwind CSS** for styling.
@@ -62,4 +72,4 @@ This is a Next.js project for the PawApp landing page, initially created with v0
 -   **Package Manager**: pnpm
 -   **UI Components**: shadcn/ui
 -   **Carousel**: embla-carousel-react, embla-carousel-autoplay
--   **Styling**: Tailwind CSS 
+-   **Styling**: Tailwind CSS

@@ -22,12 +22,14 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
+import Image from "next/image"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 
@@ -41,84 +43,103 @@ const PawPrint = ({ className }: { className?: string }) => (
 export default function PawappLanding() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(0)
 
-  const mobilePlugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }))
+  const mobilePlugin = useRef(
+    Autoplay({
+      delay: 4000,
+      stopOnInteraction: true,
+    }),
+  )
   const desktopPlugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }))
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
+    if (mediaQuery.matches) {
+      mobilePlugin.current.stop()
+      desktopPlugin.current.stop()
+    }
+  }, [])
+
+  useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 60)
+      setIsScrolled(window.scrollY > 20)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
-    <div className="flex flex-col min-h-screen font-sans">
+    <div className="flex flex-col min-h-screen font-sans bg-navy-900">
       {/* Enhanced Navigation */}
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? "h-14 bg-navy-900/90 backdrop-blur-sm shadow-lg" : "h-16 bg-transparent"
+        className={`fixed top-0 w-full z-20 transition-all duration-300 ${
+          isScrolled || isMenuOpen ? "h-16 bg-navy-900/80 backdrop-blur-md shadow-lg" : "h-20 bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-4 h-full flex items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
           <Link className="flex items-center" href="#">
-            <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-12 w-auto" />
+            <Image src="/images/paw-app-logo.png" alt="Pawapp Logo" width={48} height={48} className="h-12 w-auto" />
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             <Link
-              className="text-sm font-medium text-white hover:text-white relative group transition-colors duration-150"
+              className="text-sm font-medium text-white/90 hover:text-white relative group transition-colors duration-200"
               href="#features"
             >
               Features
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paw-yellow transition-all duration-150 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paw-yellow transition-all duration-200 group-hover:w-full"></span>
             </Link>
             <Link
-              className="text-sm font-medium text-white hover:text-white relative group transition-colors duration-150"
+              className="text-sm font-medium text-white/90 hover:text-white relative group transition-colors duration-200"
               href="#services"
             >
               Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paw-yellow transition-all duration-150 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paw-yellow transition-all duration-200 group-hover:w-full"></span>
             </Link>
             <Link
-              className="text-sm font-medium text-white hover:text-white relative group transition-colors duration-150"
+              className="text-sm font-medium text-white/90 hover:text-white relative group transition-colors duration-200"
               href="#clinics"
             >
               Clinics
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paw-yellow transition-all duration-150 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paw-yellow transition-all duration-200 group-hover:w-full"></span>
             </Link>
             <Link
-              className="text-sm font-medium text-white hover:text-white relative group transition-colors duration-150"
-              href="#blog"
+              className="text-sm font-medium text-white/90 hover:text-white relative group transition-colors duration-200"
+              href="/blog"
             >
               Blog
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paw-yellow transition-all duration-150 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paw-yellow transition-all duration-200 group-hover:w-full"></span>
             </Link>
             <Link
-              className="text-sm font-medium text-white hover:text-white relative group transition-colors duration-150"
-              href="#contact"
+              className="text-sm font-medium text-white/90 hover:text-white relative group transition-colors duration-200"
+              href="/contact"
             >
               Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paw-yellow transition-all duration-150 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-paw-yellow transition-all duration-200 group-hover:w-full"></span>
             </Link>
 
             <div className="flex items-center space-x-1 text-xs">
-              <button className="p-1 hover:bg-white/10 rounded transition-colors duration-150">🇰🇼</button>
-              <span className="text-white/60">/</span>
-              <button className="p-1 hover:bg-white/10 rounded transition-colors duration-150">🇬🇧</button>
+              <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors duration-200">🇰🇼</button>
+              <span className="text-white/50">/</span>
+              <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors duration-200">🇬🇧</button>
             </div>
 
             <Button
               size="sm"
-              className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-4 py-2 text-xs transition-all duration-150 hover:shadow-lg"
+              className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-bold px-4 py-2 text-xs transition-all duration-200 hover:shadow-[0_4px_12px_rgba(255,223,102,0.35)]"
             >
               <Download className="mr-1.5 h-3 w-3" />
               Download App
             </Button>
           </nav>
 
-          <Button variant="ghost" size="sm" className="md:hidden text-white hover:bg-white/10">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-white hover:bg-white/10 rounded-full"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             <Menu className="h-5 w-5" />
           </Button>
         </div>
@@ -126,42 +147,73 @@ export default function PawappLanding() {
 
       <main>
         {/* Responsive Hero Section */}
-        <section className="relative w-full lg:h-screen flex flex-col lg:flex-row bg-gradient-to-br from-navy-900 via-navy-900 to-navy-700 overflow-hidden">
-          {/* Mobile Image (Full-width) */}
-          <div className="lg:hidden w-full h-80 sm:h-96 relative">
-            <Carousel plugins={[mobilePlugin.current]} className="w-full h-full" opts={{ loop: true }}>
+        <section className="relative w-full lg:h-screen flex flex-col lg:flex-row bg-navy-900 overflow-hidden pt-[env(safe-area-inset-top)]">
+          {/* Mobile Image Carousel */}
+          <div className="lg:hidden w-full h-[65vh] max-h-[70vh] relative">
+            <Carousel
+              plugins={[mobilePlugin.current]}
+              className="w-full h-full"
+              opts={{ loop: true }}
+              setApi={(api: CarouselApi) => {
+                if (api) {
+                  api.on("select", () => setActiveIndex(api.selectedScrollSnap()))
+                }
+              }}
+            >
               <CarouselContent>
                 <CarouselItem>
-                  <img
+                  <Image
                     src="/images/pawapp-background.png"
                     alt="Happy dog and cat illustration"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[50%_20%]"
+                    width={800}
+                    height={1200}
+                    priority
                   />
                 </CarouselItem>
                 <CarouselItem>
-                  <img src="/images/pawappdog.png" alt="Pawapp Dog" className="w-full h-full object-cover" />
+                  <Image
+                    src="/images/pawappdog.png"
+                    alt="Pawapp Dog"
+                    className="w-full h-full object-cover object-[50%_20%]"
+                    width={800}
+                    height={1200}
+                    loading="lazy"
+                  />
                 </CarouselItem>
                 <CarouselItem>
-                  <img src="/images/pawappcat.png" alt="Pawapp Cat" className="w-full h-full object-cover" />
+                  <Image
+                    src="/images/pawappcat.png"
+                    alt="Pawapp Cat"
+                    className="w-full h-full object-cover object-[50%_20%]"
+                    width={800}
+                    height={1200}
+                    loading="lazy"
+                  />
                 </CarouselItem>
               </CarouselContent>
             </Carousel>
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-900/50 to-navy-900/10 pointer-events-none"></div>
+            <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0b1f3a] to-transparent pointer-events-none"></div>
           </div>
 
-          {/* Hero Content (Centered with more padding on mobile) */}
-          <div className="relative z-10 container mx-auto flex-1 flex items-center justify-center lg:justify-start">
-            <div className="w-full px-4 py-16 lg:py-0 text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
-                PawApp | Kuwait’s Trusted Pet Care Companion.
+          {/* Hero Content */}
+          <div className="relative z-10 container mx-auto flex-1 flex items-center justify-center lg:justify-start px-4 sm:px-6">
+            <div className="w-full py-12 md:py-16 lg:py-0 text-center lg:text-left">
+              <h1 className="font-extrabold text-white leading-tight mb-4" style={{ fontSize: "clamp(2rem, 6vw, 2.75rem)" }}>
+                PawApp: Kuwait’s Trusted Pet Care Companion.
               </h1>
-              <h4 className="text-lg sm:text-xl text-white/70 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p
+                className="text-white/80 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0"
+                style={{ fontSize: "clamp(1rem, 3.5vw, 1.25rem)" }}
+              >
                 Book vets, groomers, and more—all from your phone.
-              </h4>
+              </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
                 <Button
                   asChild
                   size="lg"
-                  className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-6 py-3 text-base sm:text-lg w-full sm:w-auto"
+                  className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-6 py-3 text-base sm:text-lg w-full sm:w-auto shadow-[0_4px_12px_rgba(255,223,102,0.35)]"
                 >
                   <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone">
                     <Download className="mr-2 h-5 w-5" />
@@ -179,49 +231,89 @@ export default function PawappLanding() {
             </div>
           </div>
 
-          {/* Desktop Image (to the right) */}
+          {/* Desktop Image Carousel */}
           <div className="hidden lg:block lg:w-1/2 h-full relative">
             <div
               className="w-full h-full absolute inset-0"
               style={{
                 clipPath: "polygon(20% 0, 100% 0%, 100% 100%, 0% 100%)",
+                maskImage: "radial-gradient(circle at 70% 50%, black 50%, transparent 90%)",
               }}
             >
               <Carousel plugins={[desktopPlugin.current]} className="w-full h-full" opts={{ loop: true }}>
                 <CarouselContent>
                   <CarouselItem>
-                    <img
+                    <Image
                       src="/images/pawapp-background.png"
                       alt="Happy dog and cat illustration"
                       className="w-full h-full object-cover"
+                      width={1200}
+                      height={1200}
+                      priority
                     />
                   </CarouselItem>
                   <CarouselItem>
-                    <img src="/images/pawappdog.png" alt="Pawapp Dog" className="w-full h-full object-cover" />
+                    <Image
+                      src="/images/pawappdog.png"
+                      alt="Pawapp Dog"
+                      className="w-full h-full object-cover"
+                      width={1200}
+                      height={1200}
+                      loading="lazy"
+                    />
                   </CarouselItem>
                   <CarouselItem>
-                    <img src="/images/pawappcat.png" alt="Pawapp Cat" className="w-full h-full object-cover" />
+                    <Image
+                      src="/images/pawappcat.png"
+                      alt="Pawapp Cat"
+                      className="w-full h-full object-cover"
+                      width={1200}
+                      height={1200}
+                      loading="lazy"
+                    />
                   </CarouselItem>
                   <CarouselItem>
-                    <img
+                    <Image
                       src="/images/pawappbros.png"
                       alt="Pawapp Bros"
                       className="w-full h-full object-cover"
+                      width={1200}
+                      height={1200}
+                      loading="lazy"
                     />
                   </CarouselItem>
                 </CarouselContent>
               </Carousel>
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/20 via-transparent to-transparent pointer-events-none"></div>
             </div>
           </div>
         </section>
 
+        {/* Mobile Carousel Dots */}
+        <div className="lg:hidden flex justify-center gap-2 -mt-8 mb-8 z-10 relative">
+          {[...Array(3).keys()].map((_, i) => (
+            <button
+              key={i}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                i === activeIndex ? "w-6 bg-paw-yellow" : "bg-white/40"
+              }`}
+              onClick={() => {
+                const api = (mobilePlugin.current as any)?.api
+                if (api) api.scrollTo(i)
+              }}
+            />
+          ))}
+        </div>
+
         {/* App Preview & Download */}
-        <section className="relative py-20 bg-navy-900 overflow-hidden">
+        <section className="relative py-20 bg-navy-800 overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center">
-            <img
+            <Image
               src="/images/paw-app-logo.png"
               alt="Pawapp Logo Watermark"
               className="w-1/2 h-auto object-contain opacity-5 rotate-12"
+              width={200}
+              height={50}
             />
           </div>
           <div className="relative container mx-auto px-4">
@@ -230,26 +322,40 @@ export default function PawappLanding() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-paw-yellow">
                   Everything Your Pet Needs in One App
                 </h2>
-                <p className="text-xl text-white/80 mb-8">
+                <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto lg:mx-0">
                   From emergency vet consultations to daily care services, Pawapp brings Kuwait's best pet care directly
                   to your phone.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-8 py-4 text-lg">
-                    <Apple className="mr-3 h-6 w-6" />
-                    Download on App Store
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-6 py-4 text-lg"
+                  >
+                    <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone">
+                      <Apple className="mr-3 h-6 w-6" />
+                      Download on App Store
+                    </Link>
                   </Button>
-                  <Button className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-8 py-4 text-lg">
-                    <Download className="mr-3 h-6 w-6" />
-                    Get it on Google Play
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-white/90 hover:bg-white text-navy-900 font-semibold px-6 py-4 text-lg"
+                  >
+                    <Link href="https://play.google.com/store/apps/details?id=com.paw.app">
+                      <Globe className="mr-3 h-6 w-6" />
+                      Get it on Google Play
+                    </Link>
                   </Button>
                 </div>
               </div>
               <div className="flex justify-center">
-                <img
+                <Image
                   src="/images/pawapp-iphone-screenshot.png"
-                  alt="Pawapp mobile application interface"
-                  className="max-w-sm w-full h-auto"
+                  alt="Pawapp on iPhone"
+                  className="w-[280px] h-auto rounded-2xl shadow-2xl"
+                  width={400}
+                  height={812}
                 />
               </div>
             </div>
@@ -259,10 +365,12 @@ export default function PawappLanding() {
         {/* Comprehensive Services */}
         <section id="services" className="relative py-16 bg-navy-900 overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center">
-            <img
+            <Image
               src="/images/paw-app-logo.png"
               alt="Pawapp Logo Watermark"
               className="w-1/2 h-auto object-contain opacity-5 rotate-12"
+              width={200}
+              height={50}
             />
           </div>
           <div className="relative container mx-auto px-4">
@@ -375,10 +483,12 @@ export default function PawappLanding() {
         {/* Key Features */}
         <section id="features" className="relative py-16 bg-navy-900 overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center">
-            <img
+            <Image
               src="/images/paw-app-logo.png"
               alt="Pawapp Logo Watermark"
               className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
+              width={200}
+              height={50}
             />
           </div>
           <div className="relative container mx-auto px-4">
@@ -504,10 +614,12 @@ export default function PawappLanding() {
         {/* Trusted Partner Clinics */}
         <section id="clinics" className="relative py-16 bg-navy-900 overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center">
-            <img
+            <Image
               src="/images/paw-app-logo.png"
               alt="Pawapp Logo Watermark"
               className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
+              width={200}
+              height={50}
             />
           </div>
           <div className="relative container mx-auto px-4">
@@ -521,10 +633,12 @@ export default function PawappLanding() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <img
+                <Image
                   src="/placeholder.svg"
                   alt="VETZOO Clinic"
                   className="w-full h-32 object-cover rounded-lg mb-4"
+                  width={400}
+                  height={200}
                 />
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-bold text-lg text-gray-900">VETZOO Clinic</h3>
@@ -535,10 +649,12 @@ export default function PawappLanding() {
               </Card>
 
               <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <img
+                <Image
                   src="/placeholder.svg"
                   alt="Safari Veterinary Clinic"
                   className="w-full h-32 object-cover rounded-lg mb-4"
+                  width={400}
+                  height={200}
                 />
                 <h3 className="font-bold text-lg text-gray-900 mb-3">Safari Veterinary Clinic</h3>
                 <p className="text-gray-600 mb-2">📍 Salmiya</p>
@@ -546,10 +662,12 @@ export default function PawappLanding() {
               </Card>
 
               <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <img
+                <Image
                   src="/placeholder.svg"
                   alt="Q8.VET"
                   className="w-full h-32 object-cover rounded-lg mb-4"
+                  width={400}
+                  height={200}
                 />
                 <h3 className="font-bold text-lg text-gray-900 mb-3">Q8.VET</h3>
                 <p className="text-gray-600 mb-2">📍 Shuwaikh</p>
@@ -557,10 +675,12 @@ export default function PawappLanding() {
               </Card>
 
               <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <img
+                <Image
                   src="/placeholder.svg"
                   alt="Pets Clinic"
                   className="w-full h-32 object-cover rounded-lg mb-4"
+                  width={400}
+                  height={200}
                 />
                 <h3 className="font-bold text-lg text-gray-900 mb-3">Pets Clinic</h3>
                 <p className="text-gray-600 mb-2">📍 Farwaniya</p>
@@ -568,10 +688,12 @@ export default function PawappLanding() {
               </Card>
 
               <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <img
+                <Image
                   src="/placeholder.svg"
                   alt="Allvet Clinic"
                   className="w-full h-32 object-cover rounded-lg mb-4"
+                  width={400}
+                  height={200}
                 />
                 <h3 className="font-bold text-lg text-gray-900 mb-3">Allvet Clinic</h3>
                 <p className="text-gray-600 mb-2">📍 Abu Halifa</p>
@@ -579,10 +701,12 @@ export default function PawappLanding() {
               </Card>
 
               <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <img
+                <Image
                   src="/placeholder.svg"
                   alt="Beeka & Moe Animal Center"
                   className="w-full h-32 object-cover rounded-lg mb-4"
+                  width={400}
+                  height={200}
                 />
                 <h3 className="font-bold text-lg text-gray-900 mb-3">Beeka & Moe Animal Center</h3>
                 <p className="text-gray-600 mb-2">📍 Hawalli</p>
@@ -590,10 +714,12 @@ export default function PawappLanding() {
               </Card>
 
               <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <img
+                <Image
                   src="/placeholder.svg"
                   alt="Universal Animal Hospital"
                   className="w-full h-32 object-cover rounded-lg mb-4"
+                  width={400}
+                  height={200}
                 />
                 <h3 className="font-bold text-lg text-gray-900 mb-3">Universal Animal Hospital</h3>
                 <p className="text-gray-600 mb-2">📍 Sabah Al-Salem</p>
@@ -601,10 +727,12 @@ export default function PawappLanding() {
               </Card>
 
               <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <img
+                <Image
                   src="/placeholder.svg"
                   alt="Royal Animal Hospital"
                   className="w-full h-32 object-cover rounded-lg mb-4"
+                  width={400}
+                  height={200}
                 />
                 <h3 className="font-bold text-lg text-gray-900 mb-3">Royal Animal Hospital</h3>
                 <p className="text-gray-600 mb-2">📍 Mangaf</p>
@@ -612,10 +740,12 @@ export default function PawappLanding() {
               </Card>
 
               <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <img
+                <Image
                   src="/placeholder.svg"
                   alt="Pet Sky Clinic"
                   className="w-full h-32 object-cover rounded-lg mb-4"
+                  width={400}
+                  height={200}
                 />
                 <h3 className="font-bold text-lg text-gray-900 mb-3">Pet Sky Clinic</h3>
                 <p className="text-gray-600 mb-2">📍 Fintas</p>
@@ -635,20 +765,24 @@ export default function PawappLanding() {
         {/* Blog Preview */}
         <section id="blog" className="relative py-16 bg-navy-900 overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center">
-            <img
+            <Image
               src="/images/paw-app-logo.png"
               alt="Pawapp Logo Watermark"
               className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
+              width={200}
+              height={50}
             />
           </div>
           <div className="relative container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-paw-yellow">Latest from Our Blog</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <Card className="bg-white/10 border border-paw-yellow/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-250">
-                <img
+                <Image
                   src="/placeholder.svg?height=200&width=400"
                   alt="Blog post"
                   className="w-full h-48 object-cover rounded-t-lg"
+                  width={400}
+                  height={200}
                 />
                 <CardContent className="p-6">
                   <p className="text-sm text-gray-300 mb-2">December 15, 2024</p>
@@ -666,10 +800,12 @@ export default function PawappLanding() {
               </Card>
 
               <Card className="bg-white/10 border border-paw-yellow/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-250">
-                <img
+                <Image
                   src="/placeholder.svg?height=200&width=400"
                   alt="Blog post"
                   className="w-full h-48 object-cover rounded-t-lg"
+                  width={400}
+                  height={200}
                 />
                 <CardContent className="p-6">
                   <p className="text-sm text-gray-300 mb-2">December 12, 2024</p>
@@ -690,10 +826,12 @@ export default function PawappLanding() {
         {/* Download CTA */}
         <section className="relative py-16 bg-navy-900 overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center">
-            <img
+            <Image
               src="/images/paw-app-logo.png"
               alt="Pawapp Logo Watermark"
               className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
+              width={200}
+              height={50}
             />
           </div>
           <div className="relative container mx-auto px-4 text-center">
@@ -732,100 +870,67 @@ export default function PawappLanding() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#092860] text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center mb-4">
-                <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-8 w-auto" />
-              </div>
-              <p className="text-gray-300 mb-4">Your trusted companion for pet care in Kuwait.</p>
-              <div className="flex space-x-4">
-                <Instagram className="h-5 w-5 text-gray-300 hover:text-paw-yellow cursor-pointer transition-colors duration-150" />
-                <Twitter className="h-5 w-5 text-gray-300 hover:text-paw-yellow cursor-pointer transition-colors duration-150" />
-                <MessageCircle className="h-5 w-5 text-gray-300 hover:text-paw-yellow cursor-pointer transition-colors duration-150" />
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <Link href="#" className="hover:text-paw-yellow transition-colors duration-150">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-paw-yellow transition-colors duration-150">
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-paw-yellow transition-colors duration-150">
-                    Clinics
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-paw-yellow transition-colors duration-150">
-                    Blog
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4">Contact</h4>
-              <div className="space-y-2 text-gray-300">
-                <div className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2" />
-                  <span>+965 1234 5678</span>
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="h-4 w-4 mr-2" />
-                  <span>Kuwait City, Kuwait</span>
-                </div>
-                <Button className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 mt-4 w-full transition-all duration-150">
-                  <MessageCircle className="mr-2 h-4 w-4" />
-                  WhatsApp Us
-                </Button>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4">Download App</h4>
-              <div className="space-y-2">
-                <Button
-                  variant="outline"
-                  className="w-full border-gray-600 text-gray-300 hover:bg-gray-700 bg-transparent transition-all duration-150"
-                >
-                  <Apple className="mr-2 h-4 w-4" />
-                  App Store
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full border-gray-600 text-gray-300 hover:bg-gray-700 bg-transparent transition-all duration-150"
-                >
-                  <Download className="mr-2 h-4 w-4" />
-                  Google Play
-                </Button>
-              </div>
-            </div>
+      <footer className="bg-navy-900 border-t border-white/10 text-white pt-16 pb-8">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="md:col-span-1">
+            <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-12 mb-4" />
+            <p className="text-sm text-white/60">Kuwait's #1 app for pet care.</p>
           </div>
-
-          <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-            <p>© 2024 Pawapp. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="#" className="hover:text-paw-yellow transition-colors duration-150">
-                Terms of Service
+          <div>
+            <h4 className="font-semibold mb-4 text-paw-yellow">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="#features" className="text-sm text-white/80 hover:text-white transition-colors">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link href="#services" className="text-sm text-white/80 hover:text-white transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-sm text-white/80 hover:text-white transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-sm text-white/80 hover:text-white transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4 text-paw-yellow">Follow Us</h4>
+            <div className="flex space-x-4">
+              <Link href="#" className="text-white/80 hover:text-white">
+                <Instagram className="h-6 w-6" />
               </Link>
-              <Link href="#" className="hover:text-paw-yellow transition-colors duration-150">
-                Privacy Policy
+              <Link href="#" className="text-white/80 hover:text-white">
+                <Twitter className="h-6 w-6" />
               </Link>
-              <Link href="#" className="hover:text-paw-yellow transition-colors duration-150">
-                Support
+              <Link href="#" className="text-white/80 hover:text-white">
+                <MessageCircle className="h-6 w-6" />
               </Link>
             </div>
           </div>
+          <div>
+            <h4 className="font-semibold mb-4 text-paw-yellow">Get in Touch</h4>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-center text-white/80">
+                <MapPin className="h-4 w-4 mr-2" />
+                Kuwait City, Kuwait
+              </li>
+              <li className="flex items-center text-white/80">
+                <Phone className="h-4 w-4 mr-2" />
+                +965 1234 5678
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="text-center text-xs text-white/50 mt-12 border-t border-white/10 pt-6">
+          © {new Date().getFullYear()} PawApp. All rights reserved.
         </div>
       </footer>
     </div>
