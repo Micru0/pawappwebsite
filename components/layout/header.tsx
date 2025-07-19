@@ -78,8 +78,8 @@ export function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-50 bg-navy-900/95 backdrop-blur-xl transition-opacity duration-300 md:hidden ${
-          isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-50 bg-navy-900/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
+          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
         <div className="container mx-auto px-4 h-full flex flex-col">

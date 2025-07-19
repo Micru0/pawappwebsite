@@ -42,7 +42,8 @@ export default function PawappLanding() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }))
+  const mobilePlugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }))
+  const desktopPlugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }))
 
   useEffect(() => {
     const handleScroll = () => {
@@ -128,7 +129,7 @@ export default function PawappLanding() {
         <section className="relative w-full lg:h-screen flex flex-col lg:flex-row bg-gradient-to-br from-navy-900 via-navy-900 to-navy-700 overflow-hidden">
           {/* Mobile Image (Full-width) */}
           <div className="lg:hidden w-full h-80 sm:h-96 relative">
-            <Carousel plugins={[plugin.current]} className="w-full h-full" opts={{ loop: true }}>
+            <Carousel plugins={[mobilePlugin.current]} className="w-full h-full" opts={{ loop: true }}>
               <CarouselContent>
                 <CarouselItem>
                   <img
@@ -187,7 +188,7 @@ export default function PawappLanding() {
                 clipPath: "polygon(20% 0, 100% 0%, 100% 100%, 0% 100%)",
               }}
             >
-              <Carousel plugins={[plugin.current]} className="w-full h-full" opts={{ loop: true }}>
+              <Carousel plugins={[desktopPlugin.current]} className="w-full h-full" opts={{ loop: true }}>
                 <CarouselContent>
                   <CarouselItem>
                     <img
