@@ -62,14 +62,24 @@ This is a Next.js project for the PawApp landing page, initially created with v0
     -   Implemented support for the `prefers-reduced-motion` media query, which disables auto-sliding while still allowing swipe gestures.
     -   Adjusted the primary CTA button to be anchored below the subtitle on small viewports and added a subtle shadow for better depth.
 
-## Styling
--   The project uses **Tailwind CSS** for styling.
--   Custom colors like `paw-yellow`, `navy-900`, etc., are defined in `tailwind.config.ts`.
--   Global styles are located in `app/globals.css`.
-
 ## Dependencies
 -   **Framework**: Next.js
 -   **Package Manager**: pnpm
 -   **UI Components**: shadcn/ui
 -   **Carousel**: embla-carousel-react, embla-carousel-autoplay
 -   **Styling**: Tailwind CSS
+
+## Recent Changes
+-   **Stagewise Integration**:
+    -   Integrated the Stagewise toolbar for AI-powered, in-browser editing.
+    -   Added `@stagewise/toolbar-next` and `@stagewise-plugins/react` to enable live UI feedback and development.
+    -   Created `components/stagewise-provider.tsx` to ensure the toolbar only renders on the client-side, preventing SSR errors.
+    -   Added `.vscode/extensions.json` to recommend the Stagewise VS Code extension for a streamlined development workflow.
+-   **Hero Section Enhancement**:
+    -   Adjusted the vertical alignment of the "PawApp" title for better visual balance.
+    -   Added a descriptive subtitle to improve context and user engagement.
+    -   Restyled the App Store and Google Play download buttons with consistent branding, including updated icons, text, and colors.
+-   **Global Background**:
+    -   Implemented a fixed, transparent PawApp logo as a global background watermark.
+    -   Used a CSS pseudo-element (`::before`) on the `body` to create a distinct background layer, ensuring content remains fully opaque.
+    -   Removed redundant, section-specific watermarks and background colors to create a unified, branded experience.

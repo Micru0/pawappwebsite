@@ -75,7 +75,7 @@ export default function PawappLanding() {
   }, [])
 
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-navy-900">
+    <div className="flex flex-col min-h-screen font-sans">
       {/* Enhanced Navigation */}
       <header
         className={`fixed top-0 w-full z-20 transition-all duration-300 ${
@@ -152,7 +152,7 @@ export default function PawappLanding() {
 
       <main>
         {/* Responsive Hero Section */}
-        <section className="relative w-full lg:h-screen flex flex-col lg:flex-row bg-navy-900 overflow-hidden pt-[env(safe-area-inset-top)]">
+        <section className="relative w-full lg:h-screen flex flex-col lg:flex-row overflow-hidden pt-[env(safe-area-inset-top)]">
           {/* Mobile Image Carousel */}
           <div className="lg:hidden w-full aspect-[9/11] max-h-[70vh] relative">
             {hasMounted ? (
@@ -200,7 +200,7 @@ export default function PawappLanding() {
                 </CarouselContent>
               </Carousel>
             ) : (
-              <div className="w-full h-full bg-navy-900 flex items-center justify-center">
+              <div className="w-full h-full flex items-center justify-center">
                 {/* Optional: Add a loading spinner here */}
               </div>
             )}
@@ -209,31 +209,35 @@ export default function PawappLanding() {
           </div>
 
           {/* Hero Content */}
-          <div className="relative z-10 container mx-auto flex-1 flex flex-col items-center justify-center lg:justify-start px-4 sm:px-6 -mt-16 lg:mt-0">
-            <div className="w-full py-12 md:py-16 lg:py-0 text-center lg:text-left">
+          <div className="relative z-10 container mx-auto flex-1 flex flex-col items-center justify-center lg:items-start lg:justify-center px-4 sm:px-6 -mt-16 lg:mt-0">
+            <div className="w-full max-w-lg text-center lg:text-left">
               <h1
-                className="font-extrabold text-white leading-tight mb-6"
+                className="font-extrabold text-white leading-tight mb-8"
                 style={{ fontSize: "clamp(3.5rem, 10vw, 6rem)" }}
               >
                 PawApp
               </h1>
+              <p className="subtitle text-lg sm:text-xl text-white/80 max-w-md mx-auto lg:mx-0 mb-10">
+                Your pet's health, simplified. All-in-one platform for vet records, appointments, and more.
+              </p>
               <div className="flex items-center gap-4 justify-center lg:justify-start">
                 <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
                   <Button
-                    variant="outline"
-                    size="icon"
-                    className="bg-white/10 border-white/20 text-white hover:bg-white/20 w-16 h-16 rounded-full transition-all duration-300"
+                    size="lg"
+                    className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-bold px-6 py-3 h-14 rounded-full text-base transition-all duration-200 hover:shadow-[0_4px_12px_rgba(255,223,102,0.35)]"
                   >
-                    <Apple className="h-8 w-8" />
+                    <Apple className="mr-2 h-6 w-6" />
+                    App Store
                   </Button>
                 </Link>
                 <Link href="https://play.google.com/store/apps/details?id=com.paw.app" passHref>
                   <Button
+                    size="lg"
                     variant="outline"
-                    size="icon"
-                    className="bg-white/10 border-white/20 text-white hover:bg-white/20 w-16 h-16 rounded-full transition-all duration-300"
+                    className="bg-white/10 border-white/20 text-white hover:bg-white/20 px-6 py-3 h-14 rounded-full text-base transition-all duration-300"
                   >
-                    <Globe className="h-8 w-8" />
+                    <Globe className="mr-2 h-6 w-6" />
+                    Google Play
                   </Button>
                 </Link>
               </div>
@@ -315,16 +319,7 @@ export default function PawappLanding() {
         </div>
 
         {/* App Preview & Download */}
-        <section className="relative py-20 bg-navy-800 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image
-              src="/images/paw-app-logo.png"
-              alt="Pawapp Logo Watermark"
-              className="w-1/2 h-auto object-contain opacity-5 rotate-12"
-              width={200}
-              height={50}
-            />
-          </div>
+        <section className="relative py-20 overflow-hidden">
           <div className="relative container mx-auto px-4">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="text-center lg:text-left">
@@ -372,16 +367,7 @@ export default function PawappLanding() {
         </section>
 
         {/* Comprehensive Services */}
-        <section id="services" className="relative py-16 bg-navy-900 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image
-              src="/images/paw-app-logo.png"
-              alt="Pawapp Logo Watermark"
-              className="w-1/2 h-auto object-contain opacity-5 rotate-12"
-              width={200}
-              height={50}
-            />
-          </div>
+        <section id="services" className="relative py-16 overflow-hidden">
           <div className="relative container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-paw-yellow">PawApp Pet Services</h2>
@@ -490,16 +476,7 @@ export default function PawappLanding() {
         </section>
 
         {/* Key Features */}
-        <section id="features" className="relative py-16 bg-navy-900 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image
-              src="/images/paw-app-logo.png"
-              alt="Pawapp Logo Watermark"
-              className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
-              width={200}
-              height={50}
-            />
-          </div>
+        <section id="features" className="relative py-16 overflow-hidden">
           <div className="relative container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-paw-yellow">Features</h2>
@@ -621,16 +598,7 @@ export default function PawappLanding() {
         </section>
 
         {/* Trusted Partner Clinics */}
-        <section id="clinics" className="relative py-16 bg-navy-900 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image
-              src="/images/paw-app-logo.png"
-              alt="Pawapp Logo Watermark"
-              className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
-              width={200}
-              height={50}
-            />
-          </div>
+        <section id="clinics" className="relative py-16 overflow-hidden">
           <div className="relative container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-paw-yellow">Trusted Partner Clinics</h2>
@@ -772,16 +740,7 @@ export default function PawappLanding() {
         </section>
 
         {/* Blog Preview */}
-        <section id="blog" className="relative py-16 bg-navy-900 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image
-              src="/images/paw-app-logo.png"
-              alt="Pawapp Logo Watermark"
-              className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
-              width={200}
-              height={50}
-            />
-          </div>
+        <section id="blog" className="relative py-16 overflow-hidden">
           <div className="relative container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-paw-yellow">Latest from Our Blog</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -833,16 +792,7 @@ export default function PawappLanding() {
         </section>
 
         {/* Download CTA */}
-        <section className="relative py-16 bg-navy-900 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image
-              src="/images/paw-app-logo.png"
-              alt="Pawapp Logo Watermark"
-              className="w-1/2 h-auto object-contain opacity-5 -rotate-12"
-              width={200}
-              height={50}
-            />
-          </div>
+        <section className="relative py-16 overflow-hidden">
           <div className="relative container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-paw-yellow">Download Pawapp Today</h2>
             <p className="text-xl text-white opacity-80 mb-8 max-w-2xl mx-auto">
@@ -879,7 +829,7 @@ export default function PawappLanding() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-navy-900 border-t border-white/10 text-white pt-16 pb-8">
+      <footer className="border-t border-white/10 text-white pt-16 pb-8">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-12 mb-4" />

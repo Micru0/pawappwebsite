@@ -4,6 +4,20 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #113172;
+  isolation: isolate;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/images/paw-app-logo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80vw;
+  opacity: 0.08;
 }
 
 @layer utilities {
