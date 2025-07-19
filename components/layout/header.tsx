@@ -22,6 +22,7 @@ export function Header() {
     { href: "/#services", label: "Services" },
     { href: "/clinics", label: "Clinics" },
     { href: "/health", label: "Health Center" },
+    { href: "/training", label: "Training" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ]

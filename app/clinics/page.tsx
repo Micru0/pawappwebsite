@@ -26,55 +26,55 @@ export default function ClinicsPage() {
   const clinics = [
     {
       id: 1,
-      name: "Kuwait Veterinary Center",
+      name: "Safari Veterinary Clinic",
       area: "Salmiya",
-      address: "Salem Al-Mubarak Street, Salmiya",
-      phone: "+965 2573 4567",
+      address: "Salmiya, Kuwait",
+      phone: "+965 2XXX XXXX",
       rating: 4.8,
       reviews: 124,
       specialties: ["General Practice", "Surgery", "Emergency Care"],
-      hours: "24/7 Emergency | 8 AM - 10 PM Regular",
+      hours: "24/7 Emergency Services",
       image: "/placeholder.svg?height=200&width=300",
       verified: true,
       emergency: true
     },
     {
       id: 2,
-      name: "Mishref Animal Hospital",
-      area: "Mishref",
-      address: "Block 5, Street 3, Mishref",
-      phone: "+965 2539 8912",
+      name: "VETZOO Clinic",
+      area: "Al-Rai",
+      address: "Al-Rai, Kuwait",
+      phone: "+965 2XXX XXXX",
       rating: 4.7,
       reviews: 89,
-      specialties: ["General Practice", "Dental Care", "Grooming"],
-      hours: "7 AM - 11 PM Daily",
+      specialties: ["General Practice", "Surgery", "Diagnostic"],
+      hours: "8 AM - 10 PM Daily",
       image: "/placeholder.svg?height=200&width=300",
       verified: true,
       emergency: false
     },
     {
       id: 3,
-      name: "Jabriya Pet Clinic",
-      area: "Jabriya",
-      address: "Block 1A, Jabriya",
-      phone: "+965 2531 2345",
+      name: "Q8.VET",
+      area: "Shuwaikh",
+      address: "Shuwaikh, Kuwait",
+      phone: "+965 2XXX XXXX",
       rating: 4.6,
       reviews: 67,
-      specialties: ["General Practice", "Vaccination", "Microchipping"],
-      hours: "9 AM - 9 PM (Closed Fridays)",
+      specialties: ["Diagnostic Equipment", "Surgery", "General Practice"],
+      hours: "9 AM - 9 PM Daily",
       image: "/placeholder.svg?height=200&width=300",
       verified: true,
       emergency: false
     },
     {
       id: 4,
-      name: "Hawalli Veterinary Clinic",
+      name: "Beeka & Moe Animal Center",
       area: "Hawalli",
-      address: "Tunis Street, Hawalli",
-      phone: "+965 2562 7890",
+      address: "Hawalli, Kuwait",
+      phone: "+965 2XXX XXXX",
       rating: 4.5,
       reviews: 156,
-      specialties: ["General Practice", "Laboratory Services", "X-Ray"],
+      specialties: ["Animal Wellness", "General Practice", "Preventive Care"],
       hours: "8 AM - 8 PM Daily",
       image: "/placeholder.svg?height=200&width=300",
       verified: true,
@@ -82,35 +82,35 @@ export default function ClinicsPage() {
     },
     {
       id: 5,
-      name: "Fintas Animal Care",
+      name: "Pet Sky Clinic",
       area: "Fintas",
-      address: "Block 4, Fintas",
-      phone: "+965 2371 5678",
+      address: "Fintas, Kuwait",
+      phone: "+965 2XXX XXXX",
       rating: 4.9,
       reviews: 203,
-      specialties: ["Surgery", "Cardiology", "Dermatology"],
-      hours: "24/7 Emergency | 7 AM - 11 PM Regular",
+      specialties: ["Modern Veterinary Care", "Surgery", "Diagnostics"],
+      hours: "8 AM - 10 PM Daily",
       image: "/placeholder.svg?height=200&width=300",
       verified: true,
-      emergency: true
+      emergency: false
     },
     {
       id: 6,
-      name: "Kuwait City Pet Hospital",
-      area: "Kuwait City",
-      address: "Abdullah Al-Mubarak Street",
-      phone: "+965 2245 3456",
+      name: "Royal Animal Hospital",
+      area: "Mangaf",
+      address: "Mangaf, Kuwait",
+      phone: "+965 2XXX XXXX",
       rating: 4.4,
       reviews: 98,
-      specialties: ["General Practice", "Boarding", "Grooming"],
-      hours: "6 AM - 12 AM Daily",
+      specialties: ["Premium Healthcare", "Surgery", "Emergency Care"],
+      hours: "7 AM - 11 PM Daily",
       image: "/placeholder.svg?height=200&width=300",
       verified: true,
       emergency: false
     }
   ];
 
-  const areas = ["All Areas", "Salmiya", "Mishref", "Jabriya", "Hawalli", "Fintas", "Kuwait City", "Ahmadi", "Farwaniya"];
+  const areas = ["All Areas", "Salmiya", "Al-Rai", "Shuwaikh", "Hawalli", "Fintas", "Mangaf", "Farwaniya", "Abu Halifa", "Sabah Al-Salem"];
   const specialties = ["All Specialties", "General Practice", "Surgery", "Emergency Care", "Dental Care", "Grooming", "Laboratory Services"];
 
   const filteredClinics = clinics.filter(clinic => {
@@ -404,10 +404,10 @@ export default function ClinicsPage() {
             <div>
               <h3 className="font-bold mb-4 text-paw-yellow">Find Clinics</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/clinics?area=salmiya" className="hover:text-white">Salmiya Clinics</a></li>
-                <li><a href="/clinics?area=hawalli" className="hover:text-white">Hawalli Clinics</a></li>
-                <li><a href="/clinics?emergency=true" className="hover:text-white">Emergency Clinics</a></li>
-                <li><a href="/clinics?specialty=surgery" className="hover:text-white">Surgery Specialists</a></li>
+                <li><a href="/clinics?area=Salmiya" className="hover:text-white">Salmiya Clinics</a></li>
+                <li><a href="/clinics?area=Al-Rai" className="hover:text-white">Al-Rai Clinics</a></li>
+                <li><a href="/clinics?area=Shuwaikh" className="hover:text-white">Shuwaikh Clinics</a></li>
+                <li><a href="/clinics?emergency=true" className="hover:text-white">24/7 Emergency Care</a></li>
               </ul>
             </div>
             

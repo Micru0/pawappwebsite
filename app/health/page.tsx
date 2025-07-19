@@ -73,17 +73,17 @@ export default function HealthPage() {
       <section className="py-16 px-4">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Pet Health Resource Center
+            24/7 Pet Health & Emergency Center
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Your comprehensive guide to keeping your furry friends healthy and happy. 
-            Expert-backed information, symptoms guides, and emergency protocols.
+            Instant vet help day or night. Get professional veterinary advice, book consultations, 
+            and access your pet's medical records - all through PawApp.
           </p>
           
           {/* Quick Symptom Checker */}
           <div className="bg-navy-700 rounded-lg p-6 max-w-2xl mx-auto mb-12">
-            <h2 className="text-2xl font-bold mb-4 text-paw-yellow">Quick Symptom Checker</h2>
-            <p className="text-gray-300 mb-4">What symptoms is your pet showing?</p>
+            <h2 className="text-2xl font-bold mb-4 text-paw-yellow">Instant Vet Triage - 24/7</h2>
+            <p className="text-gray-300 mb-4">Text or call a licensed veterinarian in seconds. What symptoms is your pet showing?</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {["Vomiting", "Diarrhea", "Lethargy", "Loss of Appetite", "Coughing", "Limping"].map((symptom) => (
                 <button

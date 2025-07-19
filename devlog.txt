@@ -76,34 +76,45 @@ This is a Next.js project for the PawApp landing page, initially created with v0
 
 ## SEO & AEO Enhancement Strategy (December 2024)
 
-### Completed Sub-Websites:
-1. **Pet Health Resource Center (`/health/`)**:
-   - Comprehensive health information hub with symptom checker
-   - Optimized for health-related search queries and Answer Engine Optimization
+### Completed Sub-Websites (Based on Actual PawApp Services):
+1. **24/7 Pet Health & Emergency Center (`/health/`)**:
+   - Instant vet triage and 24/7 consultation booking
+   - Optimized for emergency health queries and Answer Engine Optimization
    - Structured data for medical content and FAQ schema
-   - Target keywords: pet health Kuwait, symptoms checker, emergency care
+   - Target keywords: 24/7 vet Kuwait, instant vet help, pet emergency
 
 2. **Veterinary Clinics Directory (`/clinics/`)**:
-   - Searchable directory of veterinary clinics across Kuwait
-   - Local SEO optimization with structured data for businesses
+   - Real PawApp partner clinics (Safari, VETZOO, Q8.VET, etc.)
+   - Local SEO optimization with actual Kuwait clinic locations
    - Filter functionality by area and specialty
-   - Target keywords: vet clinics Kuwait, animal hospitals, emergency vet
+   - Target keywords: vet clinics Kuwait, partner clinics, verified vets
 
-### Next Priority Sub-Websites:
-3. **Pet Care Guides Hub (`/guides/`)**:
-   - Educational content for pet care, training, and nutrition
-   - Long-tail keyword optimization for comprehensive guides
-   - Breed-specific information and care instructions
+3. **Professional Pet Training & Behaviour (`/training/`)**:
+   - Obedience training, behavior modification, puppy socialization
+   - Certified trainer profiles and booking system
+   - Comprehensive training programs with pricing
+   - Target keywords: pet training Kuwait, dog training, behavior modification
 
-4. **Pet Emergency Center (`/emergency/`)**:
-   - 24/7 emergency protocols and first aid guides
-   - Crisis-moment search optimization
-   - Emergency clinic finder with real-time availability
+### Next Priority Sub-Websites (Aligned with PawApp Services):
+4. **Lifestyle Care Services (`/grooming/`)**:
+   - Grooming (salon/mobile), dog walking, pet sitting & boarding
+   - Real-time slot booking with service providers
+   - Based on actual PawApp "Lifestyle Care" service category
 
-5. **Pet Nutrition Center (`/nutrition/`)**:
-   - Comprehensive nutrition guides for different pets and life stages
-   - Food recommendation engine
-   - Diet planning tools
+5. **Pet Transport & Logistics (`/transport/`)**:
+   - Pet taxi, pickup/delivery services, boarding transport
+   - Useful for non-drivers in Kuwait (as noted in main page)
+   - Based on actual PawApp "Transport & Logistics" service
+
+6. **Pet Commerce & Marketplace (`/shop/`)**:
+   - In-app marketplace for food, meds & accessories
+   - Door-to-door product delivery, cash-on-delivery
+   - Based on actual PawApp "Commerce" service category
+
+7. **Community & Safety Hub (`/community/`)**:
+   - Lost-&-Found board, SOP (Saving Our Pets) awareness
+   - Community engagement features from actual app
+   - Based on PawApp's "Community & Safety" service
 
 ### SEO Features Implemented:
 - Comprehensive metadata optimization for all new pages
