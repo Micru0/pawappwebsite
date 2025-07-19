@@ -20,7 +20,8 @@ export function Header() {
   const navLinks = [
     { href: "/#features", label: "Features" },
     { href: "/#services", label: "Services" },
-    { href: "/#clinics", label: "Clinics" },
+    { href: "/clinics", label: "Clinics" },
+    { href: "/health", label: "Health Center" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ]

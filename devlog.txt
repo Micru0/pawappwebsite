@@ -73,3 +73,42 @@ This is a Next.js project for the PawApp landing page, initially created with v0
 -   **UI Components**: shadcn/ui
 -   **Carousel**: embla-carousel-react, embla-carousel-autoplay
 -   **Styling**: Tailwind CSS
+
+## SEO & AEO Enhancement Strategy (December 2024)
+
+### Completed Sub-Websites:
+1. **Pet Health Resource Center (`/health/`)**:
+   - Comprehensive health information hub with symptom checker
+   - Optimized for health-related search queries and Answer Engine Optimization
+   - Structured data for medical content and FAQ schema
+   - Target keywords: pet health Kuwait, symptoms checker, emergency care
+
+2. **Veterinary Clinics Directory (`/clinics/`)**:
+   - Searchable directory of veterinary clinics across Kuwait
+   - Local SEO optimization with structured data for businesses
+   - Filter functionality by area and specialty
+   - Target keywords: vet clinics Kuwait, animal hospitals, emergency vet
+
+### Next Priority Sub-Websites:
+3. **Pet Care Guides Hub (`/guides/`)**:
+   - Educational content for pet care, training, and nutrition
+   - Long-tail keyword optimization for comprehensive guides
+   - Breed-specific information and care instructions
+
+4. **Pet Emergency Center (`/emergency/`)**:
+   - 24/7 emergency protocols and first aid guides
+   - Crisis-moment search optimization
+   - Emergency clinic finder with real-time availability
+
+5. **Pet Nutrition Center (`/nutrition/`)**:
+   - Comprehensive nutrition guides for different pets and life stages
+   - Food recommendation engine
+   - Diet planning tools
+
+### SEO Features Implemented:
+- Comprehensive metadata optimization for all new pages
+- JSON-LD structured data for enhanced search visibility
+- Local business schema for veterinary clinics
+- FAQ schema for Answer Engine Optimization
+- Canonical URLs and proper robots directives
+- Open Graph and Twitter Card optimization
