@@ -161,7 +161,7 @@ export default function PawappLanding() {
               }}
             >
               <CarouselContent>
-                <CarouselItem>
+                <CarouselItem className="flex-shrink-0">
                   <Image
                     src="/images/pawapp-background.png"
                     alt="Happy dog and cat illustration"
@@ -171,7 +171,7 @@ export default function PawappLanding() {
                     priority
                   />
                 </CarouselItem>
-                <CarouselItem>
+                <CarouselItem className="flex-shrink-0">
                   <Image
                     src="/images/pawappdog.png"
                     alt="Pawapp Dog"
@@ -181,7 +181,7 @@ export default function PawappLanding() {
                     loading="lazy"
                   />
                 </CarouselItem>
-                <CarouselItem>
+                <CarouselItem className="flex-shrink-0">
                   <Image
                     src="/images/pawappcat.png"
                     alt="Pawapp Cat"
