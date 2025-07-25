@@ -129,27 +129,15 @@ export default function PawappLanding() {
               <span className="text-white/50">/</span>
               <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors duration-200">🇬🇧</button>
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
-                <Image
-                  src="/images/AppleEN.svg"
-                  alt="Download on the App Store"
-                  width={160}
-                  height={53}
-                  className="h-14 w-auto"
-                />
-              </Link>
-              <Link href="https://play.google.com/store/apps/details?id=com.paw.app" passHref>
-                <Image
-                  src="/images/GoogleEN.png"
-                  alt="Get it on Google Play"
-                  width={180}
-                  height={53}
-                  className="h-14 w-auto"
-                />
-              </Link>
-            </div>
+            <Link href="#download-cta">
+              <Button
+                size="sm"
+                className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-bold px-3 py-1.5 text-xs transition-all duration-200 hover:shadow-[0_4px_12px_rgba(255,223,102,0.35)]"
+              >
+                <Download className="mr-1 h-3 w-3" />
+                Download
+              </Button>
+            </Link>
           </nav>
 
           <Button
@@ -801,12 +789,9 @@ export default function PawappLanding() {
         </section>
 
         {/* Download CTA */}
-        <section className="relative py-16 overflow-hidden">
+        <section id="download-cta" className="relative py-16 overflow-hidden scroll-mt-20">
           <div className="relative container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-paw-yellow">Download Pawapp Today</h2>
-            <p className="text-xl text-white opacity-80 mb-8 max-w-2xl mx-auto">
-              Join thousands of pet owners across Kuwait who trust Pawapp for their pet care needs.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-paw-yellow">Download PawApp</h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
                 <Image
@@ -827,6 +812,9 @@ export default function PawappLanding() {
                 />
               </Link>
             </div>
+            <p className="text-xl text-white opacity-80 mb-8 max-w-2xl mx-auto">
+              Join thousands of pet owners across Kuwait who trust Pawapp for their pet care needs.
+            </p>
             <div className="max-w-md mx-auto">
               <p className="text-white opacity-80 mb-4">Get updates on new features:</p>
               <form className="flex gap-2">

@@ -82,3 +82,10 @@ This is a Next.js project for the PawApp landing page, initially created with v0
     -   Replaced the default App Store and Google Play buttons with official badges (`AppleEN.svg` and `GoogleEN.png`) in the hero, app preview, and CTA sections for a more authentic and trustworthy appearance.
     -   Ensured the new images are properly linked to the respective app store URLs.
     -   Adjusted the image dimensions to maintain a consistent and visually appealing layout across all sections.
+-   **Internationalization (i18n)**:
+    -   A previous attempt to implement Kuwaiti Arabic i18n (`feat/i18n-kuwaiti-arabic`) resulted in a broken build and was reverted. This implementation is considered unstable and should not be revisited.
+    -   The current version of the application is stable without Kuwaiti Arabic localization.
+-   **Navigation & CTA Update**:
+    -   The "Download" button in the top navigation bar now smoothly scrolls to the "Download CTA" section at the bottom of the page.
+    -   The "Download CTA" section has been updated to display the "Download PawApp" title more prominently, with the app store badges appearing directly below it.
+    -   The descriptive text in the CTA section is now positioned under the download badges for a more logical and visually appealing flow.
