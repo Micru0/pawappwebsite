@@ -70,11 +70,6 @@ This is a Next.js project for the PawApp landing page, initially created with v0
 -   **Styling**: Tailwind CSS
 
 ## Recent Changes
--   **Stagewise Integration**:
-    -   Integrated the Stagewise toolbar for AI-powered, in-browser editing.
-    -   Added `@stagewise/toolbar-next` and `@stagewise-plugins/react` to enable live UI feedback and development.
-    -   Created `components/stagewise-provider.tsx` to ensure the toolbar only renders on the client-side, preventing SSR errors.
-    -   Added `.vscode/extensions.json` to recommend the Stagewise VS Code extension for a streamlined development workflow.
 -   **Hero Section Enhancement**:
     -   Adjusted the vertical alignment of the "PawApp" title for better visual balance.
     -   Added a descriptive subtitle to improve context and user engagement.
@@ -83,3 +78,7 @@ This is a Next.js project for the PawApp landing page, initially created with v0
     -   Implemented a fixed, transparent PawApp logo as a global background watermark.
     -   Used a CSS pseudo-element (`::before`) on the `body` to create a distinct background layer, ensuring content remains fully opaque.
     -   Removed redundant, section-specific watermarks and background colors to create a unified, branded experience.
+-   **Download Buttons**:
+    -   Replaced the default App Store and Google Play buttons with official badges (`AppleEN.svg` and `GoogleEN.png`) in the hero, app preview, and CTA sections for a more authentic and trustworthy appearance.
+    -   Ensured the new images are properly linked to the respective app store URLs.
+    -   Adjusted the image dimensions to maintain a consistent and visually appealing layout across all sections.

@@ -130,13 +130,26 @@ export default function PawappLanding() {
               <button className="p-1.5 hover:bg-white/10 rounded-full transition-colors duration-200">🇬🇧</button>
             </div>
 
-            <Button
-              size="sm"
-              className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-bold px-4 py-2 text-xs transition-all duration-200 hover:shadow-[0_4px_12px_rgba(255,223,102,0.35)]"
-            >
-              <Download className="mr-1.5 h-3 w-3" />
-              Download App
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
+                <Image
+                  src="/images/AppleEN.svg"
+                  alt="Download on the App Store"
+                  width={160}
+                  height={53}
+                  className="h-14 w-auto"
+                />
+              </Link>
+              <Link href="https://play.google.com/store/apps/details?id=com.paw.app" passHref>
+                <Image
+                  src="/images/GoogleEN.png"
+                  alt="Get it on Google Play"
+                  width={180}
+                  height={53}
+                  className="h-14 w-auto"
+                />
+              </Link>
+            </div>
           </nav>
 
           <Button
@@ -220,25 +233,24 @@ export default function PawappLanding() {
               <p className="subtitle text-lg sm:text-xl text-white/80 max-w-md mx-auto lg:mx-0 mb-10">
                 Your pet's health, simplified. All-in-one platform for vet records, appointments, and more.
               </p>
-              <div className="flex items-center gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
-                  <Button
-                    size="lg"
-                    className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-bold px-6 py-3 h-14 rounded-full text-base transition-all duration-200 hover:shadow-[0_4px_12px_rgba(255,223,102,0.35)]"
-                  >
-                    <Apple className="mr-2 h-6 w-6" />
-                    App Store
-                  </Button>
+                  <Image
+                    src="/images/AppleEN.svg"
+                    alt="Download on the App Store"
+                    width={160}
+                    height={53}
+                    className="h-14 w-auto"
+                  />
                 </Link>
                 <Link href="https://play.google.com/store/apps/details?id=com.paw.app" passHref>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="bg-white/10 border-white/20 text-white hover:bg-white/20 px-6 py-3 h-14 rounded-full text-base transition-all duration-300"
-                  >
-                    <Globe className="mr-2 h-6 w-6" />
-                    Google Play
-                  </Button>
+                  <Image
+                    src="/images/GoogleEN.png"
+                    alt="Get it on Google Play"
+                    width={180}
+                    height={53}
+                    className="h-14 w-auto"
+                  />
                 </Link>
               </div>
             </div>
@@ -330,26 +342,24 @@ export default function PawappLanding() {
                   to your phone.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-6 py-4 text-lg"
-                  >
-                    <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone">
-                      <Apple className="mr-3 h-6 w-6" />
-                      Download on App Store
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-white/90 hover:bg-white text-navy-900 font-semibold px-6 py-4 text-lg"
-                  >
-                    <Link href="https://play.google.com/store/apps/details?id=com.paw.app">
-                      <Globe className="mr-3 h-6 w-6" />
-                      Get it on Google Play
-                    </Link>
-                  </Button>
+                  <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
+                    <Image
+                      src="/images/AppleEN.svg"
+                      alt="Download on the App Store"
+                      width={160}
+                      height={53}
+                      className="h-14 w-auto"
+                    />
+                  </Link>
+                  <Link href="https://play.google.com/store/apps/details?id=com.paw.app" passHref>
+                    <Image
+                      src="/images/GoogleEN.png"
+                      alt="Get it on Google Play"
+                      width={180}
+                      height={53}
+                      className="h-14 w-auto"
+                    />
+                  </Link>
                 </div>
               </div>
               <div className="flex justify-center">
@@ -798,14 +808,24 @@ export default function PawappLanding() {
               Join thousands of pet owners across Kuwait who trust Pawapp for their pet care needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-8 py-3 rounded transition-all duration-250">
-                <Apple className="mr-2 h-5 w-5" />
-                App Store
-              </Button>
-              <Button className="bg-paw-yellow hover:bg-paw-yellow/90 text-navy-900 font-semibold px-8 py-3 rounded transition-all duration-250">
-                <Download className="mr-2 h-5 w-5" />
-                Google Play
-              </Button>
+              <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
+                <Image
+                  src="/images/AppleEN.svg"
+                  alt="Download on the App Store"
+                  width={160}
+                  height={53}
+                  className="h-14 w-auto"
+                />
+              </Link>
+              <Link href="https://play.google.com/store/apps/details?id=com.paw.app" passHref>
+                <Image
+                  src="/images/GoogleEN.png"
+                  alt="Get it on Google Play"
+                  width={180}
+                  height={53}
+                  className="h-14 w-auto"
+                />
+              </Link>
             </div>
             <div className="max-w-md mx-auto">
               <p className="text-white opacity-80 mb-4">Get updates on new features:</p>
