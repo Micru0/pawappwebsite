@@ -70,10 +70,11 @@ This is a Next.js project for the PawApp landing page, initially created with v0
 -   **Styling**: Tailwind CSS
 
 ## Recent Changes
--   **Hero Section Enhancement**:
-    -   Adjusted the vertical alignment of the "PawApp" title for better visual balance.
-    -   Added a descriptive subtitle to improve context and user engagement.
-    -   Restyled the App Store and Google Play download buttons with consistent branding, including updated icons, text, and colors.
+-   **Branch Cleanup**: Removed the unused `feat/i18n-kuwaiti-arabic` and `cursor/begin-sub-website-seo-development-c388` branches to organize the repository.
+-   **Official Download Buttons**: Added the official Apple App Store and Google Play badges (`ApplestoreEN.svg` and `GooglestoreEN.png`) to the project and updated all download links in `app/page.tsx` to use these new images.
+-   Replaced the default App Store and Google Play buttons with official badges (`AppleEN.svg` and `GoogleEN.png`) in the hero, app preview, and CTA sections for a more authentic and trustworthy appearance.
+-   **SEO and Social Sharing**: Added a `robots.txt` file to guide search engine crawlers and implemented Open Graph meta tags for improved social media link sharing and SEO.
+-   **Hero Section Enhancement**: Updated the hero section with a new background image (`pawapp-background.png`), a more engaging headline, and a prominent call-to-action to improve user engagement.
 -   **Global Background**:
     -   Implemented a fixed, transparent PawApp logo as a global background watermark.
     -   Used a CSS pseudo-element (`::before`) on the `body` to create a distinct background layer, ensuring content remains fully opaque.
