@@ -224,7 +224,7 @@ export default function PawappLanding() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
                   <Image
-                    src="/images/AppleEN.svg"
+                    src="/images/ApplestoreEN.svg"
                     alt="Download on the App Store"
                     width={160}
                     height={53}
@@ -233,7 +233,7 @@ export default function PawappLanding() {
                 </Link>
                 <Link href="https://play.google.com/store/apps/details?id=com.paw.app" passHref>
                   <Image
-                    src="/images/GoogleEN.png"
+                    src="/images/GooglestoreEN.png"
                     alt="Get it on Google Play"
                     width={180}
                     height={53}
@@ -332,7 +332,7 @@ export default function PawappLanding() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
                     <Image
-                      src="/images/AppleEN.svg"
+                      src="/images/ApplestoreEN.svg"
                       alt="Download on the App Store"
                       width={160}
                       height={53}
@@ -341,7 +341,7 @@ export default function PawappLanding() {
                   </Link>
                   <Link href="https://play.google.com/store/apps/details?id=com.paw.app" passHref>
                     <Image
-                      src="/images/GoogleEN.png"
+                      src="/images/GooglestoreEN.png"
                       alt="Get it on Google Play"
                       width={180}
                       height={53}
@@ -795,7 +795,7 @@ export default function PawappLanding() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
                 <Image
-                  src="/images/AppleEN.svg"
+                  src="/images/ApplestoreEN.svg"
                   alt="Download on the App Store"
                   width={160}
                   height={53}
@@ -804,7 +804,7 @@ export default function PawappLanding() {
               </Link>
               <Link href="https://play.google.com/store/apps/details?id=com.paw.app" passHref>
                 <Image
-                  src="/images/GoogleEN.png"
+                  src="/images/GooglestoreEN.png"
                   alt="Get it on Google Play"
                   width={180}
                   height={53}
