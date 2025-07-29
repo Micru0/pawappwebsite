@@ -329,26 +329,6 @@ export default function PawappLanding() {
                   From emergency vet consultations to daily care services, Pawapp brings Kuwait's best pet care directly
                   to your phone.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Link href="https://apps.apple.com/lv/app/paw-app/id6474899820?platform=iphone" passHref>
-                    <Image
-                      src="/images/ApplestoreEN.svg"
-                      alt="Download on the App Store"
-                      width={160}
-                      height={53}
-                      className="h-14 w-auto"
-                    />
-                  </Link>
-                  <Link href="https://play.google.com/store/apps/details?id=com.paw.app" passHref>
-                    <Image
-                      src="/images/GooglestoreEN.png"
-                      alt="Get it on Google Play"
-                      width={180}
-                      height={53}
-                      className="h-14 w-auto"
-                    />
-                  </Link>
-                </div>
               </div>
               <div className="flex justify-center">
                 <Image
@@ -604,128 +584,69 @@ export default function PawappLanding() {
                 of mind.
               </p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <Image
-                  src="/placeholder.svg"
-                  alt="VETZOO Clinic"
-                  className="w-full h-32 object-cover rounded-lg mb-4"
-                  width={400}
-                  height={200}
-                />
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="font-bold text-lg text-gray-900">VETZOO Clinic</h3>
-                  <span className="bg-navy-900 text-white px-2 py-1 rounded text-xs">Featured</span>
-                </div>
-                <p className="text-gray-600 mb-2">📍 Al-Rai</p>
-                <p className="text-sm text-gray-500">Full-service veterinary care</p>
-              </Card>
-
-              <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Safari Veterinary Clinic"
-                  className="w-full h-32 object-cover rounded-lg mb-4"
-                  width={400}
-                  height={200}
-                />
-                <h3 className="font-bold text-lg text-gray-900 mb-3">Safari Veterinary Clinic</h3>
-                <p className="text-gray-600 mb-2">📍 Salmiya</p>
-                <p className="text-sm text-gray-500">24/7 emergency services</p>
-              </Card>
-
-              <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Q8.VET"
-                  className="w-full h-32 object-cover rounded-lg mb-4"
-                  width={400}
-                  height={200}
-                />
-                <h3 className="font-bold text-lg text-gray-900 mb-3">Q8.VET</h3>
-                <p className="text-gray-600 mb-2">📍 Shuwaikh</p>
-                <p className="text-sm text-gray-500">Modern diagnostic equipment</p>
-              </Card>
-
-              <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Pets Clinic"
-                  className="w-full h-32 object-cover rounded-lg mb-4"
-                  width={400}
-                  height={200}
-                />
-                <h3 className="font-bold text-lg text-gray-900 mb-3">Pets Clinic</h3>
-                <p className="text-gray-600 mb-2">📍 Farwaniya</p>
-                <p className="text-sm text-gray-500">Specialized pet care</p>
-              </Card>
-
-              <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Allvet Clinic"
-                  className="w-full h-32 object-cover rounded-lg mb-4"
-                  width={400}
-                  height={200}
-                />
-                <h3 className="font-bold text-lg text-gray-900 mb-3">Allvet Clinic</h3>
-                <p className="text-gray-600 mb-2">📍 Abu Halifa</p>
-                <p className="text-sm text-gray-500">Comprehensive veterinary services</p>
-              </Card>
-
-              <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Beeka & Moe Animal Center"
-                  className="w-full h-32 object-cover rounded-lg mb-4"
-                  width={400}
-                  height={200}
-                />
-                <h3 className="font-bold text-lg text-gray-900 mb-3">Beeka & Moe Animal Center</h3>
-                <p className="text-gray-600 mb-2">📍 Hawalli</p>
-                <p className="text-sm text-gray-500">Animal wellness center</p>
-              </Card>
-
-              <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Universal Animal Hospital"
-                  className="w-full h-32 object-cover rounded-lg mb-4"
-                  width={400}
-                  height={200}
-                />
-                <h3 className="font-bold text-lg text-gray-900 mb-3">Universal Animal Hospital</h3>
-                <p className="text-gray-600 mb-2">📍 Sabah Al-Salem</p>
-                <p className="text-sm text-gray-500">Advanced medical treatments</p>
-              </Card>
-
-              <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Royal Animal Hospital"
-                  className="w-full h-32 object-cover rounded-lg mb-4"
-                  width={400}
-                  height={200}
-                />
-                <h3 className="font-bold text-lg text-gray-900 mb-3">Royal Animal Hospital</h3>
-                <p className="text-gray-600 mb-2">📍 Mangaf</p>
-                <p className="text-sm text-gray-500">Premium pet healthcare</p>
-              </Card>
-
-              <Card className="bg-[#F5F7FA] border border-paw-yellow/30 p-6 rounded-xl hover:shadow-lg transition-all duration-250">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Pet Sky Clinic"
-                  className="w-full h-32 object-cover rounded-lg mb-4"
-                  width={400}
-                  height={200}
-                />
-                <h3 className="font-bold text-lg text-gray-900 mb-3">Pet Sky Clinic</h3>
-                <p className="text-gray-600 mb-2">📍 Fintas</p>
-                <p className="text-sm text-gray-500">Modern veterinary facility</p>
-              </Card>
-            </div>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {[
+                  { name: "VETZOO Clinic", location: "Al-Rai", description: "Full-service veterinary care", image: "/images/vets/vetzoo.jpeg", featured: true, workingHours: "Sun - Thu: 9 AM - 10 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Safari Veterinary Clinic", location: "Salmiya", description: "24/7 emergency services", image: "/images/vets/safarivet.png", workingHours: "24/7", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Q8.VET", location: "Shuwaikh", description: "Modern diagnostic equipment", image: "/images/vets/q8vet.png", workingHours: "Sat - Thu: 10 AM - 8 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Pets Clinic", location: "Farwaniya", description: "Specialized pet care", image: "/images/vets/petsclinic.png", workingHours: "Sun - Thu: 9 AM - 9 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Allvet Clinic", location: "Abu Halifa", description: "Comprehensive veterinary services", image: "/images/vets/allvet.jpeg", workingHours: "Sun - Thu: 10 AM - 7 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Beeka & Moe Animal Center", location: "Hawalli", description: "Animal wellness center", image: "/images/vets/beekaandmoe.png", workingHours: "Sat - Thu: 11 AM - 8 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Universal Animal Hospital", location: "Sabah Al-Salem", description: "Advanced medical treatments", image: "/images/vets/universalveterinaryhospital.png", workingHours: "24/7", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Royal Animal Hospital", location: "Mangaf", description: "Premium pet healthcare", image: "/images/vets/royalanimalhospital.png", workingHours: "Sun - Thu: 9 AM - 10 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Pet Sky Clinic", location: "Fintas", description: "Modern veterinary facility", image: "/images/vets/petsky.png", workingHours: "Sat - Thu: 10 AM - 8 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Animal House", location: "Kuwait City", description: "Your pet's second home", image: "/images/vets/animalhouse.jpg", workingHours: "Sun - Thu: 9 AM - 9 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Elite Veterinary Clinic", location: "Kuwait City", description: "Top-tier veterinary services", image: "/images/vets/elite.jpeg", workingHours: "Sun - Thu: 10 AM - 7 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Gulf Pets Clinic", location: "Kuwait City", description: "Caring for your beloved pets", image: "/images/vets/gulfpetsclinic.png", workingHours: "Sat - Thu: 11 AM - 8 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Offleash", location: "Kuwait City", description: "Pet supplies and more", image: "/images/vets/offleash.jpeg", workingHours: "Sun - Thu: 9 AM - 10 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Pawpups", location: "Kuwait City", description: "For the happiest puppies", image: "/images/vets/pawpups.jpeg", workingHours: "Sat - Thu: 10 AM - 8 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Petco", location: "Kuwait City", description: "The pet store for every need", image: "/images/vets/petco.jpeg", workingHours: "Sun - Thu: 9 AM - 9 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Pet Planet", location: "Kuwait City", description: "A world of pet care", image: "/images/vets/pet_planet.jpeg", workingHours: "Sun - Thu: 10 AM - 7 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Pet Point", location: "Kuwait City", description: "Your one-stop pet shop", image: "/images/vets/petpoint.jpeg", workingHours: "Sat - Thu: 11 AM - 8 PM", locationUrl: "#", phoneNumber: "#" },
+                  { name: "Pet Store", location: "Kuwait City", description: "All your pet needs in one place", image: "/images/vets/pet_store.jpeg", workingHours: "Sun - Thu: 9 AM - 10 PM", locationUrl: "#", phoneNumber: "#" },
+                ].map((clinic, index) => (
+                  <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <div className="p-2 h-full">
+                      <Card className="bg-white/10 backdrop-blur-md border border-paw-yellow/20 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col p-3 rounded-2xl hover:-translate-y-1 hover:scale-[1.02]">
+                        <div className="relative h-32 flex-shrink-0 flex items-center justify-center bg-white/10 rounded-xl mb-2 p-2">
+                          <Image
+                            src={clinic.image}
+                            alt={clinic.name}
+                            className="max-h-full max-w-full object-contain rounded-md"
+                            width={150}
+                            height={90}
+                          />
+                          {clinic.featured && <span className="absolute top-1 right-1 bg-paw-yellow text-navy-900 px-1.5 py-0.5 rounded-full text-[10px] font-semibold">Featured</span>}
+                        </div>
+                        <div className="flex flex-col flex-grow text-center space-y-2 py-2">
+                          <h3 className="font-bold text-base text-white truncate">{clinic.name}</h3>
+                          <p className="text-xs text-gray-300">{clinic.workingHours}</p>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2 mt-auto">
+                          <Button variant="outline" size="sm" className="bg-white/10 border border-paw-yellow/30 text-white rounded-lg shadow-sm hover:bg-white/20 hover:border-paw-yellow/40 transition-colors">
+                            <MapPin className="h-4 w-4 mr-1.5" />
+                            Location
+                          </Button>
+                          <Button variant="outline" size="sm" className="bg-white/10 border border-paw-yellow/30 text-white rounded-lg shadow-sm hover:bg-white/20 hover:border-paw-yellow/40 transition-colors">
+                            <Phone className="h-4 w-4 mr-1.5" />
+                            Call
+                          </Button>
+                        </div>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-[-20px] top-1/2 -translate-y-1/2 fill-black hidden md:flex" />
+              <CarouselNext className="absolute right-[-20px] top-1/2 -translate-y-1/2 fill-black hidden md:flex" />
+            </Carousel>
 
             <div className="text-center mt-8">
               <p className="text-white/80 mb-4">Plus Zoo Care Clinics in Salmiya, Shuwaikh, Mahboula & Al-Wafrah</p>
