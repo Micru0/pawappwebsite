@@ -95,6 +95,29 @@ This is a Next.js project for the PawApp landing page, initially created with v0
     -   The "Trusted Partner Clinics" section has been updated to use a carousel slider.
     -   The carousel is implemented using `embla-carousel-react` and includes next/previous buttons for navigation.
     -   The images for the clinics are located in `public/images/vets/`.
+-   **Dynamic Blog Implementation**:
+    -   Implemented a fully dynamic, SEO-optimized blog powered by local markdown files.
+    -   Added `gray-matter` and `remark` to parse markdown frontmatter and content.
+    -   Created a new `posts` directory to store blog articles.
+    -   Developed a `lib/posts.ts` utility module to handle reading and processing of blog posts.
+    -   Built a dynamic route `app/blog/[slug]/page.tsx` to render individual posts with unique metadata and JSON-LD schema.
+    -   Refactored the main blog page (`app/blog/page.tsx`) and the landing page's blog preview section to dynamically display posts.
+
+-   **Main Page Refactoring (Server/Client Components)**:
+    -   Resolved a build error (`Module not found: Can't resolve 'fs'`) by refactoring the main page (`app/page.tsx`) to correctly separate server and client logic.
+    -   `app/page.tsx` was converted into a Server Component, responsible for fetching blog post data on the server.
+    -   The interactive UI of the main page was moved to a new Client Component, `components/layout/landing-page.tsx`.
+    -   This change aligns with Next.js best practices, preventing server-side modules from being incorrectly bundled in client-side code.
+
+-   **Blog Section Overhaul (UI & Bug Fixes)**:
+    -   **Markdown Rendering**: Fixed a critical bug where markdown content, especially tables, was not rendering correctly. This was resolved by installing and configuring `remark-gfm` in `lib/posts.ts` and `@tailwindcss/typography` in `tailwind.config.ts`.
+    -   **Next.js Parameter Error**: Resolved a persistent error (`Route "/blog/[slug]" used \`params.slug\`. \`params\` should be awaited before using its properties.`) in Next.js 15. This was a subtle issue related to the "lazy" loading of route parameters in asynchronous Server Components. The definitive fix was to `await` the `slug` before passing it to the data fetching function, like so: `const slug = await params.slug; const postData = await getPostData(slug);`. This was implemented in `app/blog/[slug]/page.tsx` for both the `generateMetadata` and `Post` functions.
+    -   **UI Enhancements**:
+        -   Redesigned the blog post page (`app/blog/[slug]/page.tsx`) with a modern, card-like layout, featuring a blurred background and rounded corners.
+        -   Added a prominent "Go Back" link for improved navigation.
+        -   The post title is now styled with a gradient text effect to make it stand out.
+        -   Added the publication date below the title for better context.
+        -   Custom styles were added to the `article` container to improve the presentation of tables within the markdown content.
 
 ## Codebase Deep Dive & Optimization
 

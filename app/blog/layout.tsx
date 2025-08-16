@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
 
 export const metadata: Metadata = {
   title: "PawApp Blog | Pet Care Tips, News & Stories",
@@ -11,5 +13,11 @@ export default function BlogLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return <>{children}</>
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  )
 } 
