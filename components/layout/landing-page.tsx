@@ -484,7 +484,7 @@ export function PawappLanding({ posts }: { posts: PostData[] }) {
                 transition={{ duration: 0.8 }}
               >
                 <Image 
-                  src="/images/drpaw/point.png" 
+                  src="/images/drpaw/Point.png" 
                   alt="Dr. Paw pointing at features" 
                   width={500} 
                   height={500} 
