@@ -34,6 +34,7 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import { Footer } from "@/components/layout/footer"
 import { motion } from "framer-motion"
+import SectionDivider from "@/components/layout/section-divider"
 
 type PostData = {
   slug: string
@@ -303,6 +304,8 @@ export function PawappLanding({ posts }: { posts: PostData[] }) {
           </div>
         </section>
 
+        <SectionDivider />
+
         {/* Mobile Carousel Dots */}
         <div className="lg:hidden flex justify-center gap-2 -mt-8 mb-8 z-10 relative">
           {[...Array(3).keys()].map((_, i) => (
@@ -344,6 +347,8 @@ export function PawappLanding({ posts }: { posts: PostData[] }) {
             </div>
           </div>
         </section>
+
+        <SectionDivider />
 
         {/* Services */}
         <section id="services" className="relative py-20 overflow-hidden">
@@ -424,6 +429,8 @@ export function PawappLanding({ posts }: { posts: PostData[] }) {
             </div>
           </div>
         </section>
+
+        <SectionDivider />
 
         {/* Key Features */}
         <section id="features" className="relative py-20 overflow-hidden">
