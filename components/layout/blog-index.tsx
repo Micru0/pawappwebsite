@@ -5,8 +5,16 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Search } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
-export function BlogIndex({ posts }) {
+type PostData = {
+  slug: string
+  date: string
+  title: string
+  coverImage?: string
+}
+
+export function BlogIndex({ posts }: { posts: PostData[] }) {
   return (
     <div className="bg-navy-800 text-white">
       <main className="container mx-auto px-4 py-12 md:py-20">
@@ -35,10 +43,13 @@ export function BlogIndex({ posts }) {
               className="bg-white/5 border border-paw-yellow/20 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
               {post.coverImage && (
-                <img
+                <Image
                   src={post.coverImage}
                   alt={post.title}
+                  width={1200}
+                  height={630}
                   className="w-full h-48 object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               )}
               <CardContent className="p-6 flex flex-col flex-grow">

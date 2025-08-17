@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Download, Menu, X } from "lucide-react"
+import Image from "next/image"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -36,7 +37,7 @@ export function Header() {
       >
         <div className="container mx-auto px-4 h-full flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-14 w-auto" />
+            <Image src="/images/paw-app-logo.png" alt="Pawapp Logo" width={112} height={56} className="h-14 w-auto" priority />
           </Link>
 
           {/* Desktop Navigation */}
@@ -82,7 +83,7 @@ export function Header() {
           <div className="container mx-auto px-4 h-full flex flex-col">
             <div className="flex justify-between items-center h-20">
               <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-14 w-auto" />
+                <Image src="/images/paw-app-logo.png" alt="Pawapp Logo" width={112} height={56} className="h-14 w-auto" />
               </Link>
               <Button variant="ghost" size="icon" className="text-white" onClick={() => setIsMenuOpen(false)}>
                 <X className="h-7 w-7" />

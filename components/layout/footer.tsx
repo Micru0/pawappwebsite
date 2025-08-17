@@ -1,12 +1,13 @@
 import Link from "next/link"
 import { Instagram, Twitter, MessageCircle, MapPin, Phone } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
     <footer className="border-t border-white/10 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="md:col-span-1">
-          <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-12 mb-4" />
+          <Image src="/images/paw-app-logo.png" alt="Pawapp Logo" width={96} height={48} className="h-12 w-auto mb-4" />
           <p className="text-sm text-white/60">Kuwait's #1 app for pet care.</p>
         </div>
         <div>

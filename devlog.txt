@@ -178,3 +178,31 @@ This session focused on a comprehensive cleanup, optimization, and redesign of t
     -   Redesigned the clinic cards with a modern, actionable layout featuring a logo, working hours, and "Location" and "Call" buttons.
     -   Applied a "glassmorphism" effect to the cards, with a dark, blurred background and yellow accent borders, to create a cohesive look with the rest of the site.
     -   Iteratively refined the card design to improve alignment, spacing, and visual hierarchy.
+
+## Documentation Additions
+
+### Architecture
+- **Framework**: Next.js App Router (15.x), TypeScript, Tailwind CSS.
+- **Rendering split**:
+  - `app/page.tsx` is a Server Component fetching blog data via `getSortedPostsData()`.
+  - Interactive UI lives in `components/layout/landing-page.tsx` (Client Component).
+- **Layouts**:
+  - Global: `app/layout.tsx` for global styles and metadata.
+  - Section layouts: `app/blog/layout.tsx`, `app/contact/layout.tsx`.
+- **Shared UI**:
+  - Reusable `Header` and `Footer` components in `components/layout/`.
+  - Shadcn/ui components in `components/ui/`.
+
+### Content Authoring (Blog)
+- **Location**: `posts/*.md`
+- **Frontmatter schema**:
+  - `title` (string, required)
+  - `date` (ISO date string, required)
+  - `description` (string, required)
+  - `author` (string, optional)
+  - `coverImage` (string, optional; local URL like `/images/blog/xxx.png` recommended)
+  - `schema` (object, required; JSON-LD)
+- **Pipeline**: Parsed with `gray-matter`, rendered with `remark` + `remark-gfm` to HTML, styled via `@tailwindcss/typography`.
+- **Routes**:
+  - Index: `app/blog/page.tsx` (uses `BlogIndex` component)
+  - Post: `app/blog/[slug]/page.tsx` (awaits `params.slug` per Next 15 lazy params)

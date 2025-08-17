@@ -35,7 +35,14 @@ import Autoplay from "embla-carousel-autoplay"
 import { Footer } from "@/components/layout/footer"
 import { motion } from "framer-motion"
 
-export function PawappLanding({ posts }) {
+type PostData = {
+  slug: string
+  date: string
+  title: string
+  coverImage?: string
+}
+
+export function PawappLanding({ posts }: { posts: PostData[] }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -338,203 +345,152 @@ export function PawappLanding({ posts }) {
           </div>
         </section>
 
+        {/* Services */}
         <section id="services" className="relative py-20 overflow-hidden">
-  <div className="relative container mx-auto px-4">
-    <div className="grid lg:grid-cols-2 gap-16 items-center">
-      <motion.div 
-        className="hidden lg:block"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.8 }}
-      >
-        <Image 
-          src="/images/drpaw/Paw_Drib.png" 
-          alt="Dr. Paw comforting a pet" 
-          width={500} 
-          height={500} 
-          className="rounded-3xl shadow-2xl"
-        />
-      </motion.div>
-      <div>
-        <motion.div 
-          className="text-center lg:text-left mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="flex justify-center lg:justify-start items-center gap-4">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">
-              PawApp Pet Services
-            </h2>
-            <motion.span 
-              className="text-4xl" 
-              role="img" 
-              aria-label="paw emoji"
-              whileHover={{ rotate: [0, 20, -10, 20, 0], scale: 1.2, transition: { duration: 0.5, yoyo: Infinity } }}
-            >
-              🐾
-            </motion.span>
-          </div>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto lg:mx-0 mt-4">
-            From veterinary needs to grooming and walking, find trusted professionals for every aspect of your pet's well-being.
-          </p>
-        </motion.div>
+          <div className="relative container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                className="hidden lg:block"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8 }}
+              >
+                <Image
+                  src="/images/drpaw/Paw_Drib.png"
+                  alt="Dr. Paw comforting a pet"
+                  width={500}
+                  height={500}
+                  className="rounded-3xl shadow-2xl"
+                />
+              </motion.div>
+              <div>
+                <motion.div
+                  className="text-center lg:text-left mb-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="flex justify-center lg:justify-start items-center gap-4">
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">
+                      PawApp Pet Services
+                    </h2>
+                    <motion.span
+                      className="text-4xl"
+                      role="img"
+                      aria-label="paw emoji"
+                      whileHover={{ rotate: [0, 20, -10, 20, 0], scale: 1.2, transition: { duration: 0.5, repeat: Infinity, repeatType: "mirror" } }}
+                    >
+                      🐾
+                    </motion.span>
+                  </div>
+                  <p className="text-lg text-white/80 max-w-3xl mx-auto lg:mx-0 mt-4">
+                    From veterinary needs to grooming and walking, find trusted professionals for every aspect of your pet's well-being.
+                  </p>
+                </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {[
-            { icon: Stethoscope, title: "Pet Health & Emergency", description: "24/7 instant vet help, in-clinic consultations, and electronic medical records.", ariaLabel: "Veterinary services" },
-            { icon: Scissors, title: "Lifestyle Care", description: "Book grooming, dog walking, and pet sitting with real-time availability.", ariaLabel: "Grooming and lifestyle services" },
-            { icon: Dog, title: "Training & Behaviour", description: "Find professional trainers for basic obedience and behavior modification.", ariaLabel: "Pet training services" },
-            { icon: MessageCircle, title: "Transport & Logistics", description: "Arrange pet taxis for vet visits, grooming, and boarding.", ariaLabel: "Pet transport services" },
-            { icon: ShoppingBag, title: "Commerce", description: "In-app marketplace for food, meds, and accessories with same-day delivery.", ariaLabel: "Pet supplies marketplace" },
-            { icon: Star, title: "Community & Safety", description: "Connect with the community on our Lost & Found board and safety hub.", ariaLabel: "Community and safety features" }
-          ].map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card className="bg-navy-700/50 border-2 border-paw-yellow/30 rounded-2xl h-full flex flex-col p-6 transition-all duration-300 hover:border-paw-yellow/50 hover:shadow-2xl hover:-translate-y-1">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="bg-paw-yellow/10 p-3 rounded-full">
-                    <service.icon className="h-7 w-7 text-paw-yellow" aria-label={service.ariaLabel} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
-                    <p className="text-white/70 text-sm">{service.description}</p>
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {[
+                    { icon: Stethoscope, title: "Pet Health & Emergency", description: "24/7 instant vet help, in-clinic consultations, and electronic medical records.", ariaLabel: "Veterinary services" },
+                    { icon: Scissors, title: "Lifestyle Care", description: "Book grooming, dog walking, and pet sitting with real-time availability.", ariaLabel: "Grooming and lifestyle services" },
+                    { icon: Dog, title: "Training & Behaviour", description: "Find professional trainers for basic obedience and behavior modification.", ariaLabel: "Pet training services" },
+                    { icon: MessageCircle, title: "Transport & Logistics", description: "Arrange pet taxis for vet visits, grooming, and boarding.", ariaLabel: "Pet transport services" },
+                    { icon: ShoppingBag, title: "Commerce", description: "In-app marketplace for food, meds, and accessories with same-day delivery.", ariaLabel: "Pet supplies marketplace" },
+                    { icon: Star, title: "Community & Safety", description: "Connect with the community on our Lost & Found board and safety hub.", ariaLabel: "Community and safety features" }
+                  ].map((service, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <Card className="bg-navy-700/50 border-2 border-paw-yellow/30 rounded-2xl h-full flex flex-col p-6 transition-all duration-300 hover:border-paw-yellow/50 hover:shadow-2xl hover:-translate-y-1">
+                        <div className="flex items-start gap-4 mb-4">
+                          <div className="bg-paw-yellow/10 p-3 rounded-full">
+                            <service.icon className="h-7 w-7 text-paw-yellow" aria-label={service.ariaLabel} />
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                            <p className="text-white/70 text-sm">{service.description}</p>
+                          </div>
+                        </div>
+                      </Card>
+                    </motion.div>
+                  ))}
                 </div>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Key Features */}
-        <section id="features" className="relative py-16 overflow-hidden">
+        <section id="features" className="relative py-20 overflow-hidden">
           <div className="relative container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-paw-yellow">Features</h2>
-              <p className="text-lg text-white/80 max-w-3xl mx-auto">
-                Everything you need to manage your pet's life, from health records to appointment scheduling, right at
-                your fingertips.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-navy-700 p-2 rounded-lg">
-                    <Stethoscope className="h-5 w-5 text-paw-yellow" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-paw-yellow mb-1">Unified Pet Profile</h3>
-                    <p className="text-sm text-gray-300">Store breed, age, vaccine records</p>
-                  </div>
-                </div>
-              </Card>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <motion.div 
+                  className="text-center lg:text-left mb-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200 mb-4">
+                    Powerful Features, Simple Interface
+                  </h2>
+                  <p className="text-lg text-white/80 max-w-3xl mx-auto lg:mx-0">
+                    Everything you need to manage your pet's life, from health records to appointment scheduling, right at your fingertips.
+                  </p>
+                </motion.div>
 
-              <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-navy-700 p-2 rounded-lg">
-                    <MessageCircle className="h-5 w-5 text-paw-yellow" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-paw-yellow mb-1">Instant Vet Triage 24/7</h3>
-                    <p className="text-sm text-gray-300">Text or call a licensed vet in seconds</p>
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {[
+                    { icon: Stethoscope, title: "Unified Pet Profile", description: "Store breed, age, and vaccine records in one place." },
+                    { icon: MessageCircle, title: "Instant Vet Triage 24/7", description: "Text or call a licensed vet in seconds for emergencies." },
+                    { icon: Calendar, title: "Real-time Slot Booking", description: "See clinic & groomer availability and book instantly." },
+                    { icon: Globe, title: "Multi-language UI", description: "Seamlessly switch between Arabic and English." },
+                    { icon: MapPin, title: "Geo-based Clinic Finder", description: "Find the nearest open clinic, surfaced first." },
+                    { icon: ShoppingBag, title: "Product Marketplace", description: "Same-day delivery of pet food, meds, and essentials." },
+                  ].map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <Card className="bg-navy-700/50 border-2 border-paw-yellow/30 rounded-2xl h-full flex flex-col p-6 transition-all duration-300 hover:border-paw-yellow/50 hover:shadow-2xl hover:-translate-y-1">
+                        <div className="flex items-start gap-4">
+                          <div className="bg-paw-yellow/10 p-3 rounded-full">
+                            <feature.icon className="h-7 w-7 text-paw-yellow" />
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
+                            <p className="text-white/70 text-sm">{feature.description}</p>
+                          </div>
+                        </div>
+                      </Card>
+                    </motion.div>
+                  ))}
                 </div>
-              </Card>
-
-              <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-navy-700 p-2 rounded-lg">
-                    <Calendar className="h-5 w-5 text-paw-yellow" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-paw-yellow mb-1">Real-time Slot Booking</h3>
-                    <p className="text-sm text-gray-300">See clinic & groomer availability instantly</p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-navy-700 p-2 rounded-lg">
-                    <Globe className="h-5 w-5 text-paw-yellow" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-paw-yellow mb-1">Multi-language UI</h3>
-                    <p className="text-sm text-gray-300">Arabic ⇄ English toggle</p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-navy-700 p-2 rounded-lg">
-                    <MapPin className="h-5 w-5 text-paw-yellow" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-paw-yellow mb-1">Geo-based Clinic Finder</h3>
-                    <p className="text-sm text-gray-300">Nearest open clinic surfaced first</p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-navy-700 p-2 rounded-lg">
-                    <MessageCircle className="h-5 w-5 text-paw-yellow" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-paw-yellow mb-1">Push & WhatsApp Alerts</h3>
-                    <p className="text-sm text-gray-300">Appointment reminders and emergency pings</p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-navy-700 p-2 rounded-lg">
-                    <ShoppingBag className="h-5 w-5 text-paw-yellow" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-paw-yellow mb-1">Cash / K-Net / Apple Pay</h3>
-                    <p className="text-sm text-gray-300">Local payment methods built in</p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-navy-700 p-2 rounded-lg">
-                    <Star className="h-5 w-5 text-paw-yellow" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-paw-yellow mb-1">Lost-&-Found Quick Post</h3>
-                    <p className="text-sm text-gray-300">Upload photo, auto-broadcast to network</p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="bg-white/10 border border-paw-yellow/30 p-6 rounded-xl shadow-sm">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-navy-700 p-2 rounded-lg">
-                    <Download className="h-5 w-5 text-paw-yellow" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-paw-yellow mb-1">Product Marketplace</h3>
-                    <p className="text-sm text-gray-300">Same-day delivery of essentials</p>
-                  </div>
-                </div>
-              </Card>
+              </div>
+              <motion.div 
+                className="hidden lg:block mt-12"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8 }}
+              >
+                <Image 
+                  src="/images/drpaw/point.png" 
+                  alt="Dr. Paw pointing at features" 
+                  width={500} 
+                  height={500} 
+                  className="rounded-3xl shadow-2xl"
+                />
+              </motion.div>
             </div>
           </div>
         </section>
@@ -627,15 +583,25 @@ export function PawappLanding({ posts }) {
           <div className="relative container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-paw-yellow">Latest from Our Blog</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {posts.slice(0, 2).map((post) => (
+              {posts.slice(0, 2).map((post: PostData) => (
                 <Card
                   key={post.slug}
-                  className="bg-white/10 border border-paw-yellow/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-250"
+                  className="bg-white/10 border border-paw-yellow/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-250 overflow-hidden flex flex-col"
                 >
-                  <CardContent className="p-6">
+                  {post.coverImage && (
+                    <Image
+                      src={post.coverImage}
+                      alt={post.title}
+                      width={1200}
+                      height={630}
+                      className="w-full h-48 object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  )}
+                  <CardContent className="p-6 flex flex-col flex-grow">
                     <p className="text-sm text-gray-300 mb-2">{post.date}</p>
-                    <h3 className="text-xl font-bold mb-3 text-paw-yellow">{post.title}</h3>
-                    <Link href={`/blog/${post.slug}`} className="text-white font-medium hover:underline">
+                    <h3 className="text-xl font-bold mb-3 text-paw-yellow flex-grow">{post.title}</h3>
+                    <Link href={`/blog/${post.slug}`} className="text-white font-medium hover:underline mt-auto">
                       Read more →
                     </Link>
                   </CardContent>

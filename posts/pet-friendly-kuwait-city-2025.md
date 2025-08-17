@@ -3,6 +3,7 @@ title: "Pet-Friendly Parks, Cafés, and Beaches in Kuwait City (2025 Edition)"
 date: "2025-01-04"
 description: "Looking for dog-friendly outdoor spots in Kuwait City? Discover updated 2025 cafés, parks, and beaches where pets are welcome."
 author: "Shahad AlEissa"
+coverImage: "/images/blog/petparks.png"
 schema: {
   "@context":"https://schema.org","@type":"FAQPage",
   "mainEntity":[

@@ -3,6 +3,7 @@ title: "The Latest Rules for Bringing Pets into Kuwait (Updated 2025)"
 date: "2025-01-01"
 description: "Moving to Kuwait with your cat or dog in 2025? Here are the newest import rules, permits, and vaccination timelines you must follow before you fly."
 author: "Shahad AlEissa"
+coverImage: "/images/blog/pet airport.png"
 schema: {
   "@context":"https://schema.org",
   "@type":"FAQPage",

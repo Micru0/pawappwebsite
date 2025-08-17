@@ -3,6 +3,7 @@ title: "The Dinar Breakdown: Is Pet Insurance Worth It in Kuwait?"
 date: "2025-01-05"
 description: "Pet insurance is new to Kuwait. We compare 2025 prices, coverage, and real vet costs to decide if it’s worth your hard-earned dinars."
 author: "Shahad AlEissa"
+coverImage: "/images/blog/kuwaitidinar.png"
 schema: {
   "@context":"https://schema.org","@type":"FAQPage",
   "mainEntity":[

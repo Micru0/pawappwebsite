@@ -3,6 +3,7 @@ title: "Keeping Pets Cool in Kuwait’s Summer Heat: Vet-Approved Tips for 50 °
 date: "2025-01-03"
 description: "Kuwait’s summers are brutal. Here’s how vets say you can keep dogs, cats, and small pets safe when temps soar above 50 °C."
 author: "Shahad AlEissa"
+coverImage: "/images/blog/Keeping Pets Cool.png"
 schema: {
   "@context":"https://schema.org",
   "@type":"FAQPage",
