@@ -16,11 +16,11 @@ type PostData = {
 
 export function BlogIndex({ posts }: { posts: PostData[] }) {
   return (
-    <div className="bg-navy-800 text-white">
+    <div className="bg-white text-navy-900">
       <main className="container mx-auto px-4 py-12 md:py-20">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-paw-yellow mb-4">The PawApp Blog</h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-4">The PawApp Blog</h1>
+          <p className="text-lg text-navy-900/80 max-w-2xl mx-auto">
             Your go-to resource for expert pet care tips, inspiring stories, and updates from the PawApp team.
           </p>
         </div>
@@ -30,9 +30,9 @@ export function BlogIndex({ posts }: { posts: PostData[] }) {
             <Input
               type="search"
               placeholder="Search articles..."
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/60 w-full pl-10"
+              className="bg-black/5 border-black/10 text-navy-900 placeholder:text-navy-900/50 w-full pl-10"
             />
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-navy-900/50" />
           </div>
         </div>
 
@@ -40,7 +40,7 @@ export function BlogIndex({ posts }: { posts: PostData[] }) {
           {posts.map((post) => (
             <Card
               key={post.slug}
-              className="bg-white/5 border border-paw-yellow/20 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="bg-white border border-black/10 rounded-xl overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
               {post.coverImage && (
                 <Image
@@ -53,11 +53,11 @@ export function BlogIndex({ posts }: { posts: PostData[] }) {
                 />
               )}
               <CardContent className="p-6 flex flex-col flex-grow">
-                <p className="text-sm text-white/60 mb-2">{post.date}</p>
-                <h3 className="text-xl font-bold text-paw-yellow mb-3 flex-grow">{post.title}</h3>
+                <p className="text-sm text-navy-900/60 mb-2">{post.date}</p>
+                <h3 className="text-xl font-bold text-navy-900 mb-3 flex-grow">{post.title}</h3>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="text-paw-yellow font-semibold hover:underline mt-auto"
+                  className="text-navy-900 font-semibold hover:underline mt-auto"
                 >
                   Read More →
                 </Link>
@@ -67,7 +67,7 @@ export function BlogIndex({ posts }: { posts: PostData[] }) {
         </div>
 
         <div className="flex justify-center mt-12">
-          <Button variant="outline" className="text-white border-paw-yellow hover:bg-paw-yellow/10">
+          <Button variant="outline" className="text-navy-900 border-black/10 hover:bg-black/5">
             Load More Posts
           </Button>
         </div>

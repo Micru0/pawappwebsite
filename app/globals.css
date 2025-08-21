@@ -3,21 +3,8 @@
 @tailwind utilities;
 
 body {
-  background-color: #113172;
+  background-color: #ffffff;
   isolation: isolate;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: url('/images/paw-app-logo.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 80vw;
-  opacity: 0.03;
-  filter: blur(3px);
 }
 
 @layer utilities {

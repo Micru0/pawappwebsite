@@ -29,11 +29,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled
-            ? "h-16 bg-navy-900/80 backdrop-blur-lg border-b border-white/10 shadow-lg"
-            : "h-20 bg-transparent"
-        }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 h-16 bg-navy-900/80 backdrop-blur-lg border-b border-white/10 shadow-lg`}
       >
         <div className="container mx-auto px-4 h-full flex items-center justify-between">
           <Link href="/" className="flex items-center">

@@ -24,9 +24,9 @@ import Link from "next/link"
 
 export default function ContactPage() {
   return (
-    <div className="bg-navy-800 text-white">
+    <div className="bg-white text-navy-900">
       {/* Header */}
-      <header className="bg-navy-900 py-4 shadow-md">
+      <header className="bg-white py-4 shadow-md">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <Link href="/" className="flex items-center">
             <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-12 w-auto" />
@@ -59,37 +59,37 @@ export default function ContactPage() {
 
       <main className="container mx-auto px-4 py-12 md:py-20">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-paw-yellow mb-4">Get in Touch</h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-navy-900 mb-4">Get in Touch</h1>
+          <p className="text-lg text-navy-900/80 max-w-2xl mx-auto">
             We're here to help with any questions, feedback, or support needs. Reach out to us anytime.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-white/5 border border-paw-yellow/20 p-8 rounded-xl">
-            <h2 className="text-2xl font-bold text-paw-yellow mb-6">Send Us a Message</h2>
+          <div className="bg-white border border-black/10 p-8 rounded-xl">
+            <h2 className="text-2xl font-bold text-navy-900 mb-6">Send Us a Message</h2>
             <form className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-navy-900/80 mb-2">
                   Full Name
                 </label>
-                <Input id="name" type="text" placeholder="Your Name" className="bg-white/10" />
+                <Input id="name" type="text" placeholder="Your Name" className="bg-black/5 border-black/10" />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-navy-900/80 mb-2">
                   Email Address
                 </label>
-                <Input id="email" type="email" placeholder="you@example.com" className="bg-white/10" />
+                <Input id="email" type="email" placeholder="you@example.com" className="bg-black/5 border-black/10" />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-navy-900/80 mb-2">
                   Message
                 </label>
                 <Textarea
                   id="message"
                   placeholder="How can we help you?"
-                  className="bg-white/10"
+                  className="bg-black/5 border-black/10"
                   rows={5}
                 />
               </div>
@@ -105,15 +105,15 @@ export default function ContactPage() {
               <div className="flex items-start">
                 <Phone className="w-6 h-6 text-paw-yellow mt-1 mr-4" />
                 <div>
-                  <h3 className="font-semibold text-white">Call Us</h3>
-                  <p className="text-white/80">+965 1234 5678</p>
+                  <h3 className="font-semibold text-navy-900">Call Us</h3>
+                  <p className="text-navy-900/80">+965 1234 5678</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <MessageCircle className="w-6 h-6 text-paw-yellow mt-1 mr-4" />
                 <div>
-                  <h3 className="font-semibold text-white">Email Us</h3>
-                  <a href="mailto:info@pawapp.co" className="text-white/80 hover:text-paw-yellow">
+                  <h3 className="font-semibold text-navy-900">Email Us</h3>
+                  <a href="mailto:info@pawapp.co" className="text-navy-900/80 hover:text-paw-yellow">
                     info@pawapp.co
                   </a>
                 </div>
@@ -121,12 +121,12 @@ export default function ContactPage() {
               <div className="flex items-start">
                 <MapPin className="w-6 h-6 text-paw-yellow mt-1 mr-4" />
                 <div>
-                  <h3 className="font-semibold text-white">Our Location</h3>
-                  <p className="text-white/80">Shuwaikh Industrial, Kuwait</p>
+                  <h3 className="font-semibold text-navy-900">Our Location</h3>
+                  <p className="text-navy-900/80">Shuwaikh Industrial, Kuwait</p>
                 </div>
               </div>
             </div>
-            <div className="mt-8 rounded-xl overflow-hidden border-2 border-paw-yellow/30">
+            <div className="mt-8 rounded-xl overflow-hidden border-2 border-black/10">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d222639.4398579761!2d47.76932464195156!3d29.37606443491793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9c83ce455983%3A0x334bfb2b135756a1!2sKuwait%20City!5e0!3m2!1sen!2skw!4v1672526789123!5m2!1sen!2skw"
                 width="100%"
@@ -142,18 +142,18 @@ export default function ContactPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-navy-900 text-white/80 pt-16 pb-8 mt-16">
+      <footer className="bg-white text-navy-900/80 pt-16 pb-8 mt-16 border-t border-black/10">
         <div className="container mx-auto px-4">
           <div className="grid gap-12 md:grid-cols-3 md:gap-8">
             <div className="md:col-span-1">
               <Link href="/" className="mb-4 inline-block">
                 <img src="/images/paw-app-logo.png" alt="Pawapp Logo" className="h-14 w-auto" />
               </Link>
-              <p className="text-sm text-white/60">Kuwait's Trusted Pet Care Companion.</p>
+              <p className="text-sm text-navy-900/70">Kuwait's Trusted Pet Care Companion.</p>
             </div>
             <div className="grid grid-cols-2 gap-8 md:col-span-2">
               <div>
-                <h4 className="font-semibold text-white mb-4">Quick Links</h4>
+                <h4 className="font-semibold text-navy-900 mb-4">Quick Links</h4>
                 <nav className="flex flex-col space-y-2">
                   <Link href="/#features" className="hover:text-paw-yellow transition-colors">
                     Features
@@ -170,7 +170,7 @@ export default function ContactPage() {
                 </nav>
               </div>
               <div>
-                <h4 className="font-semibold text-white mb-4">Contact</h4>
+                <h4 className="font-semibold text-navy-900 mb-4">Contact</h4>
                 <div className="flex flex-col space-y-2">
                   <a href="mailto:info@pawapp.co" className="flex items-center hover:text-paw-yellow transition-colors">
                     <MessageCircle className="w-4 h-4 mr-2" />
@@ -192,7 +192,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-          <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/50">
+          <div className="mt-12 pt-8 border-t border-black/10 text-center text-sm text-navy-900/50">
             <p>&copy; {new Date().getFullYear()} PawApp. All Rights Reserved.</p>
           </div>
         </div>
